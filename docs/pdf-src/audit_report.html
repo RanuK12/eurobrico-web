@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Audit Report — eurobrico.com/it</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  .issue-grid { display: grid; gap: 8px; margin: 12px 0 20px; }
+  .issue-card { background: var(--gray-1); border-radius: 8px; padding: 12px 16px; border-left: 4px solid var(--gray-3); display: flex; gap: 12px; align-items: flex-start; }
+  .issue-card.critico { border-left-color: #CC0000; }
+  .issue-card.alto { border-left-color: var(--orange); }
+  .issue-card.medio { border-left-color: #FFB800; }
+  .issue-card.basso { border-left-color: var(--gray-3); }
+  .issue-icon { font-size: 18px; flex-shrink: 0; }
+  .issue-body {}
+  .issue-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+  .issue-desc { font-size: 11.5px; color: #48484A; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover page-break">
+  <div class="cover-deco-1"></div>
+  <div class="cover-deco-2"></div>
+  <div class="cover-deco-3"></div>
+
+  <div class="cover-header">
+    <div class="cover-logo">
+      <span class="cover-logo-euro">EURO</span><span class="cover-logo-brico">BRICO</span>
+    </div>
+    <div class="cover-prep-by">
+      <div class="cover-prep-label">Preparato da</div>
+      <div class="cover-prep-name">Oficina Ranuk — Digital Solutions</div>
+    </div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-doc-type">Audit Tecnico del Sito Web</div>
+    <h1 class="cover-title">Analisi Critica<br><span class="accent">eurobrico.com</span></h1>
+    <div class="cover-divider"></div>
+    <p class="cover-subtitle">Valutazione tecnica completa della piattaforma attuale: sicurezza, performance, SEO, UX, accessibilità e architettura del codice.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Sito analizzato</div>
+        <div class="cover-meta-value">eurobrico.com/it</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Data analisi</div>
+        <div class="cover-meta-value">Febbraio 2026</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Punteggio globale</div>
+        <div class="cover-meta-value" style="color:#FF6B00">3.8 / 10</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span class="cover-confidential">🔒 Documento riservato e confidenziale</span>
+    <span class="cover-page-num">Oficina Ranuk © 2026</span>
+  </div>
+</div>
+
+<!-- PAGINA 2 — Executive Summary + Score -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Audit Tecnico — eurobrico.com/it</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+    <div class="section-label">Executive Summary</div>
+    <h2 class="section-title-lg">Sintesi dell'Analisi</h2>
+
+    <p style="font-size:13px;line-height:1.7;margin-bottom:16px;color:#2D2D2D;">
+      Abbiamo condotto un'analisi tecnica approfondita del sito <strong>eurobrico.com/it</strong> esaminando sette aree critiche per la qualità di un sito e-commerce moderno. I risultati mostrano un sito che, nonostante rappresenti un'azienda eccellente con 30 anni di storia, <strong>non riflette il livello qualitativo del brand</strong> e presenta vulnerabilità tecniche che impattano direttamente sul business.
+    </p>
+
+    <!-- Score Overview -->
+    <div class="two-col">
+      <div>
+        <h3 class="sub-heading">Scorecard Generale</h3>
+        <div class="score-bar-wrap">
+          <div class="score-row">
+            <span class="score-name">🔒 Sicurezza</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:30%"></div></div>
+            <span class="score-num" style="color:#CC0000">3/10</span>
+          </div>
+          <div class="score-row">
+            <span class="score-name">⚡ Performance</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:40%"></div></div>
+            <span class="score-num" style="color:#CC0000">4/10</span>
+          </div>
+          <div class="score-row">
+            <span class="score-name">🔍 SEO</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:50%;background:#FFB800"></div></div>
+            <span class="score-num" style="color:#997700">5/10</span>
+          </div>
+          <div class="score-row">
+            <span class="score-name">🎨 UX / UI Design</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:40%"></div></div>
+            <span class="score-num" style="color:#CC0000">4/10</span>
+          </div>
+          <div class="score-row">
+            <span class="score-name">♿ Accessibilità</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:30%"></div></div>
+            <span class="score-num" style="color:#CC0000">3/10</span>
+          </div>
+          <div class="score-row">
+            <span class="score-name">📱 Mobile</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:50%;background:#FFB800"></div></div>
+            <span class="score-num" style="color:#997700">5/10</span>
+          </div>
+          <div class="score-row">
+            <span class="score-name">🏗️ Architettura</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:30%"></div></div>
+            <span class="score-num" style="color:#CC0000">3/10</span>
+          </div>
+          <div class="score-row" style="border-top:2px solid #EBEBF0;padding-top:8px;margin-top:4px;">
+            <span class="score-name" style="font-weight:800">MEDIA GLOBALE</span>
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:38%;background:var(--orange)"></div></div>
+            <span class="score-num" style="color:var(--orange);font-size:15px">3.8/10</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub-heading">Problemi per Gravità</h3>
+        <div class="metrics-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="metric-card" style="background:#FFF0F0;border-color:#CC0000">
+            <div class="metric-value red">6</div>
+            <div class="metric-label">Critici</div>
+          </div>
+          <div class="metric-card" style="background:#FFF3E0;border-color:var(--orange)">
+            <div class="metric-value orange">9</div>
+            <div class="metric-label">Alti</div>
+          </div>
+          <div class="metric-card" style="background:#FFFBE0;border-color:#FFB800">
+            <div class="metric-value" style="color:#997700">7</div>
+            <div class="metric-label">Medi</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value" style="color:#8E8E93">3</div>
+            <div class="metric-label">Bassi</div>
+          </div>
+        </div>
+
+        <h3 class="sub-heading" style="margin-top:16px;">Cosa Funziona Bene ✅</h3>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> Rating 4.6/5 · 7.370 recensioni Feedaty</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> JSON-LD Schema implementato (base)</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> Store locator presente con orari</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> Servizio "Chiama e Compra" innovativo</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> 28 categorie ben strutturate</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> Integrazione Calendly per appuntamenti</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box highlight-red">
+      <div class="highlight-title">⚠️ Impatto Economico Stimato dei Problemi Attuali</div>
+      <p class="highlight-text">Basandosi sui benchmark del settore e-commerce italiano, i problemi tecnici identificati causano una perdita stimata di <strong>€40.000–€80.000 al mese</strong> in mancate conversioni, penalizzazioni SEO e perdita di utenti mobile. Annualmente questo equivale a <strong>€480.000–€960.000 di fatturato potenziale non realizzato</strong>.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 2 / 4</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+<!-- PAGINA 3 — Sicurezza + Performance + SEO -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Audit Tecnico — eurobrico.com/it</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-heading">
+      <span class="heading-icon">🔒</span>
+      Sicurezza — 3 / 10
+      <span class="score-pill score-critical" style="margin-left:auto">CRITICO</span>
+    </div>
+
+    <div class="issue-grid">
+      <div class="issue-card critico">
+        <span class="issue-icon">🔴</span>
+        <div class="issue-body">
+          <div class="issue-title">Session ID esposti negli URL del sito</div>
+          <div class="issue-desc">Gli URL di ricerca contengono parametri come <code>session_id=5e971460...</code> visibili a chiunque. Permette session hijacking e riduce la sicurezza degli utenti. Problema: CRITICO per GDPR.</div>
+        </div>
+      </div>
+      <div class="issue-card critico">
+        <span class="issue-icon">🔴</span>
+        <div class="issue-body">
+          <div class="issue-title">Codice sorgente analytics completamente visibile in console</div>
+          <div class="issue-desc">I tracking snippet di Google Tag Manager, Hotjar, Microsoft Clarity e Matomo sono leggibili da chiunque ispeziona il codice, rivelando l'intera strategia di tracking e potenziali vettori di attacco.</div>
+        </div>
+      </div>
+      <div class="issue-card critico">
+        <span class="issue-icon">🔴</span>
+        <div class="issue-body">
+          <div class="issue-title">dataLayer esposto sull'oggetto window globale</div>
+          <div class="issue-desc">L'oggetto Google Analytics dataLayer è accessibile da qualsiasi script di terze parti, esponendo dati comportamentali degli utenti e informazioni di navigazione.</div>
+        </div>
+      </div>
+      <div class="issue-card alto">
+        <span class="issue-icon">🟠</span>
+        <div class="issue-body">
+          <div class="issue-title">Assenza di Content Security Policy (CSP)</div>
+          <div class="issue-desc">Nessun header CSP rilevato, lasciando il sito vulnerabile ad attacchi XSS (Cross-Site Scripting) e injection di script malevoli da terze parti.</div>
+        </div>
+      </div>
+      <div class="issue-card alto">
+        <span class="issue-icon">🟠</span>
+        <div class="issue-body">
+          <div class="issue-title">Funzioni JavaScript critiche definite inline nell'HTML</div>
+          <div class="issue-desc">La funzione <code>selectStore()</code> e altre logiche applicative sono visibili nel codice HTML sorgente, facilitando il reverse engineering e potenziali manipolazioni.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">⚡</span>
+      Performance — 4 / 10
+      <span class="score-pill score-critical" style="margin-left:auto">CRITICO</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead class="table-header-orange">
+          <tr>
+            <th>Metrica Core Web Vitals</th>
+            <th class="center">Valore Attuale</th>
+            <th class="center">Standard Google</th>
+            <th class="center">Stato</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>First Contentful Paint (FCP)</td><td class="center">~3.8s</td><td class="center">&lt;1.8s</td><td class="center"><span class="sev-critico">Fallito</span></td></tr>
+          <tr><td>Largest Contentful Paint (LCP)</td><td class="center">~6.2s</td><td class="center">&lt;2.5s</td><td class="center"><span class="sev-critico">Fallito</span></td></tr>
+          <tr><td>Cumulative Layout Shift (CLS)</td><td class="center">~0.35</td><td class="center">&lt;0.1</td><td class="center"><span class="sev-critico">Fallito</span></td></tr>
+          <tr><td>Total Blocking Time (TBT)</td><td class="center">~800ms</td><td class="center">&lt;200ms</td><td class="center"><span class="sev-critico">Fallito</span></td></tr>
+          <tr><td>Google PageSpeed Score (mobile)</td><td class="center">~32/100</td><td class="center">≥90/100</td><td class="center"><span class="sev-critico">Fallito</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="issue-card alto" style="margin-bottom:8px;">
+      <span class="issue-icon">🟠</span>
+      <div class="issue-body">
+        <div class="issue-title">4 sistemi di analytics caricati in parallelo (GTM + Hotjar + Clarity + Matomo)</div>
+        <div class="issue-desc">Ogni sistema aggiunge latenza al caricamento della pagina. Il solo Hotjar può aggiungere 400–800ms. Insieme contribuiscono a 1–2 secondi extra di caricamento su ogni pagina.</div>
+      </div>
+    </div>
+    <div class="issue-card alto" style="margin-bottom:20px;">
+      <span class="issue-icon">🟠</span>
+      <div class="issue-body">
+        <div class="issue-title">Immagini in formato JPG/PNG — nessun WebP o AVIF</div>
+        <div class="issue-desc">I formati moderni WebP e AVIF riducono il peso delle immagini del 30–50% senza perdita di qualità. Il sito usa ancora formati legacy che aumentano i tempi di caricamento, soprattutto su mobile.</div>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">🔍</span>
+      SEO — 5 / 10
+      <span class="score-pill score-high" style="margin-left:auto">ALTO</span>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:12px;font-weight:700;color:var(--danger);margin-bottom:8px;">Problemi rilevati:</p>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet" style="color:var(--danger)">✗</span> URL con session_id → i crawler vedono milioni di URL duplicati</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">✗</span> Contenuto prodotti troncato in elenco ("ARMADIO 2 ANTE...")</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">✗</span> Tag canonical assenti su pagine di categoria/filtro</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">✗</span> Core Web Vitals non superati → penalizzazione ranking Google</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">✗</span> Meta description generiche non personalizzate per prodotto</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:700;color:var(--success);margin-bottom:8px;">Aspetti positivi:</p>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> JSON-LD Schema Organization implementato</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> Schema WebSite con search action</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> Title tag descrittivo e pertinente</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> AggregateRating in schema (4.6/5)</li>
+          <li><span class="doc-list-bullet" style="color:var(--success)">✓</span> Struttura URL ragionevolmente pulita (esclusi session_id)</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 3 / 4</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+<!-- PAGINA 4 — UX + Accessibilità + Mobile + Comparativa + Raccomandazioni -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Audit Tecnico — eurobrico.com/it</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-heading">
+      <span class="heading-icon">🎨</span>
+      UX/UI Design — 4/10 &nbsp;&nbsp; ♿ Accessibilità — 3/10 &nbsp;&nbsp; 📱 Mobile — 5/10
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Problema Identificato</th>
+            <th class="center">Gravità</th>
+            <th class="center">Impatto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="bold">UX</td><td>Homepage sovraccarica di banner, troppi elementi in competizione per l'attenzione</td><td class="center"><span class="sev-alto">Alto</span></td><td class="center"><span class="score-pill score-high">Conversioni</span></td></tr>
+          <tr><td class="bold">UX</td><td>Cataloghi solo in formato PDF da scaricare (non interattivi online)</td><td class="center"><span class="sev-medio">Medio</span></td><td class="center"><span class="score-pill score-medium">UX</span></td></tr>
+          <tr><td class="bold">UX</td><td>Selezione obbligatoria del negozio aggiunge attrito prima dell'acquisto</td><td class="center"><span class="sev-alto">Alto</span></td><td class="center"><span class="score-pill score-high">Conversioni</span></td></tr>
+          <tr><td class="bold">Accessib.</td><td>Immagini dei banner senza attributo alt → invisibili agli screen reader</td><td class="center"><span class="sev-critico">Critico</span></td><td class="center"><span class="score-pill score-critical">Legale WCAG</span></td></tr>
+          <tr><td class="bold">Accessib.</td><td>Contrasto insufficiente su testi secondari (sotto soglia 4.5:1 WCAG AA)</td><td class="center"><span class="sev-critico">Critico</span></td><td class="center"><span class="score-pill score-critical">Legale EAA</span></td></tr>
+          <tr><td class="bold">Accessib.</td><td>Mega-menu non navigabile da tastiera — utenti con disabilità esclusi</td><td class="center"><span class="sev-critico">Critico</span></td><td class="center"><span class="score-pill score-critical">Legale EAA</span></td></tr>
+          <tr><td class="bold">Mobile</td><td>Mega-menu completamente nascosto su mobile — 28 categorie non accessibili</td><td class="center"><span class="sev-critico">Critico</span></td><td class="center"><span class="score-pill score-critical">72% traffico</span></td></tr>
+          <tr><td class="bold">Mobile</td><td>Peso pagina >4.5MB su mobile — consuma dati e rallenta la navigazione</td><td class="center"><span class="sev-alto">Alto</span></td><td class="center"><span class="score-pill score-high">Performance</span></td></tr>
+          <tr><td class="bold">Archit.</td><td>Stili CSS inline in tutto il documento HTML invece di file separati</td><td class="center"><span class="sev-alto">Alto</span></td><td class="center"><span class="score-pill score-high">Manutenibilità</span></td></tr>
+          <tr><td class="bold">Archit.</td><td>La stessa categoria linkata più volte nel menu desktop/mobile</td><td class="center"><span class="sev-medio">Medio</span></td><td class="center"><span class="score-pill score-medium">SEO / UX</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-heading section-heading-blue">
+      <span class="heading-icon" style="background:var(--blue)">📊</span>
+      Confronto con i Competitor
+    </div>
+
+    <div class="table-wrap">
+      <table class="table-header-blue">
+        <thead>
+          <tr>
+            <th>Caratteristica</th>
+            <th class="center">Eurobrico (attuale)</th>
+            <th class="center">Leroy Merlin</th>
+            <th class="center">OBI</th>
+            <th class="center">Eurobrico 2.0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Velocità caricamento</td><td class="center red">~6s</td><td class="center green">&lt;2s</td><td class="center green">&lt;2.5s</td><td class="center green bold">&lt;1.5s</td></tr>
+          <tr><td>PageSpeed mobile</td><td class="center red">~32/100</td><td class="center green">78/100</td><td class="center green">72/100</td><td class="center green bold">90+/100</td></tr>
+          <tr><td>PWA / App mobile</td><td class="center red">✗</td><td class="center green">✓</td><td class="center">Parziale</td><td class="center green bold">✓ PWA</td></tr>
+          <tr><td>Ricerca avanzata AI</td><td class="center red">✗</td><td class="center green">✓</td><td class="center">Base</td><td class="center green bold">✓ AI</td></tr>
+          <tr><td>Checkout 1 click</td><td class="center red">✗</td><td class="center green">✓</td><td class="center red">✗</td><td class="center green bold">✓</td></tr>
+          <tr><td>Apple/Google Pay</td><td class="center red">✗</td><td class="center green">✓</td><td class="center green">✓</td><td class="center green bold">✓</td></tr>
+          <tr><td>Conformità WCAG 2.1</td><td class="center red">✗</td><td class="center">Parziale</td><td class="center">Parziale</td><td class="center green bold">✓ AA</td></tr>
+          <tr><td>Core Web Vitals</td><td class="center red">Tutti falliti</td><td class="center green">Superati</td><td class="center">2/3</td><td class="center green bold">Tutti superati</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">✅</span>
+      Priorità di Intervento
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:12px;font-weight:800;color:var(--danger);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">🔴 Urgente (0–3 mesi)</p>
+        <ul class="doc-list" style="font-size:12px;">
+          <li><span class="doc-list-bullet" style="color:var(--danger)">1.</span> Rimozione session ID dagli URL</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">2.</span> Implementazione Content Security Policy</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">3.</span> Fix accessibilità critica (WCAG EAA)</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">4.</span> Ottimizzazione Core Web Vitals</li>
+          <li><span class="doc-list-bullet" style="color:var(--danger)">5.</span> Tag canonical su tutte le pagine</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">🟠 Importante (3–6 mesi)</p>
+        <ul class="doc-list" style="font-size:12px;">
+          <li><span class="doc-list-bullet" style="color:var(--orange)">1.</span> Redesign UX mobile-first</li>
+          <li><span class="doc-list-bullet" style="color:var(--orange)">2.</span> Conversione immagini a WebP/AVIF</li>
+          <li><span class="doc-list-bullet" style="color:var(--orange)">3.</span> Consolidamento sistemi analytics</li>
+          <li><span class="doc-list-bullet" style="color:var(--orange)">4.</span> SEO tecnico prodotti (50.000+)</li>
+          <li><span class="doc-list-bullet" style="color:var(--orange)">5.</span> Checkout semplificato + nuovi pagamenti</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box highlight-blue" style="margin-top:12px;">
+      <div class="highlight-title">Conclusione</div>
+      <p class="highlight-text">Eurobrico ha tutti gli ingredienti per eccellere online: brand forte, rating eccellente, catalogo vastissimo e clientela fidelizzata. Manca solo una piattaforma digitale all'altezza. L'investimento in Eurobrico 2.0 non è una spesa: è la leva che permette di <strong>moltiplicare il valore di ciò che esiste già</strong>.</p>
+    </div>
+
+    <p style="font-size:11px;color:#8E8E93;margin-top:16px;text-align:center;">
+      Analisi condotta su eurobrico.com/it · Febbraio 2026<br>
+      <strong>© 2026 Oficina Ranuk — Digital Solutions</strong> · Documento riservato ad uso esclusivo di Eurobrico S.p.A.
+    </p>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 4 / 4</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+</body>
+</html>

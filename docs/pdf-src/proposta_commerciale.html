@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Proposta Commerciale — Eurobrico 2.0</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  .roi-box {
+    background: linear-gradient(135deg, #003366 0%, #004D99 100%);
+    border-radius: 8px;
+    padding: 20px 24px;
+    color: white;
+    margin: 16px 0;
+  }
+  .roi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 12px; }
+  .roi-item { text-align: center; }
+  .roi-value { font-size: 26px; font-weight: 900; color: #FF8C33; }
+  .roi-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.6); font-weight: 600; }
+  .price-section { background: #F8F8FA; border-radius: 8px; padding: 16px 20px; margin: 8px 0 4px; border: 1px solid #EBEBF0; }
+  .price-section-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #8E8E93; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<!-- ================================================
+     COVER
+================================================ -->
+<div class="cover page-break">
+  <div class="cover-deco-1"></div>
+  <div class="cover-deco-2"></div>
+  <div class="cover-deco-3"></div>
+
+  <div class="cover-header">
+    <div class="cover-logo">
+      <span class="cover-logo-euro">EURO</span><span class="cover-logo-brico">BRICO</span>
+    </div>
+    <div class="cover-prep-by">
+      <div class="cover-prep-label">Preparato da</div>
+      <div class="cover-prep-name">Oficina Ranuk — Digital Solutions</div>
+    </div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-doc-type">Proposta Commerciale</div>
+    <h1 class="cover-title">Eurobrico <span class="accent">2.0</span><br>Trasformazione<br>Digitale</h1>
+    <div class="cover-divider"></div>
+    <p class="cover-subtitle">Proposta per il redesign completo della piattaforma e-commerce: dalla diagnosi alla soluzione, con investimento dettagliato e ROI stimato.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Destinatario</div>
+        <div class="cover-meta-value">Eurobrico S.p.A.</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Data</div>
+        <div class="cover-meta-value">Febbraio 2026</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Validità</div>
+        <div class="cover-meta-value">30 giorni</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span class="cover-confidential">🔒 Documento riservato e confidenziale</span>
+    <span class="cover-page-num">Oficina Ranuk © 2026</span>
+  </div>
+</div>
+
+<!-- ================================================
+     PAGINA 2 — Chi Siamo + Situazione Attuale
+================================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Proposta Commerciale — Eurobrico 2.0</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-label">Lettera di Presentazione</div>
+    <h2 class="section-title-lg">Chi Siamo</h2>
+    <p class="section-subtitle">Oficina Ranuk — Digital Solutions</p>
+
+    <div class="highlight-box highlight-blue">
+      <div class="highlight-title">La nostra missione</div>
+      <p class="highlight-text">Trasformiamo la presenza digitale delle aziende in <strong>esperienze che generano fatturato</strong>. Non costruiamo siti web: costruiamo piattaforme di vendita che lavorano per voi 24 ore su 24, 7 giorni su 7.</p>
+    </div>
+
+    <p style="font-size:13px;line-height:1.7;margin-bottom:16px;color:#2D2D2D;">
+      Gentile Direzione Eurobrico,<br><br>
+      vi scriviamo dopo un'analisi approfondita del vostro sito web attuale. Ciò che abbiamo trovato ci ha convinti che <strong>esiste un'opportunità concreta di crescita digitale</strong> che meriterebbe di essere colta con urgenza.<br><br>
+      Eurobrico è una realtà straordinaria: 30 anni di storia, 24 negozi, 50.000 prodotti, 32.000 clienti al giorno e un rating medio di 4.6/5. Un brand solido, radicato nel territorio. Eppure il sito web attuale <strong>non riflette questa eccellenza</strong> — e questo rappresenta sia un rischio che un'opportunità.
+    </p>
+
+    <div class="two-col">
+      <div>
+        <h3 class="sub-heading">Il problema in sintesi</h3>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet">▸</span><span>Sito con <strong>punteggio tecnico 3.8/10</strong> — sotto la media del settore</span></li>
+          <li><span class="doc-list-bullet">▸</span><span>Caricamento di ~6 secondi → il 53% degli utenti abbandona</span></li>
+          <li><span class="doc-list-bullet">▸</span><span>Session ID esposti negli URL (rischio GDPR)</span></li>
+          <li><span class="doc-list-bullet">▸</span><span>Non conforme al European Accessibility Act (giu. 2025)</span></li>
+          <li><span class="doc-list-bullet">▸</span><span>Core Web Vitals Google non superati → penalizzazione SEO</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub-heading">L'opportunità</h3>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet">▸</span><span>Brand forte + sito debole = <strong>gap di conversione enorme</strong></span></li>
+          <li><span class="doc-list-bullet">▸</span><span>72% del traffico e-commerce italiano è da mobile</span></li>
+          <li><span class="doc-list-bullet">▸</span><span>I competitor stanno investendo in digital: voi potete batterli</span></li>
+          <li><span class="doc-list-bullet">▸</span><span>50.000 prodotti = potenziale SEO enorme da sfruttare</span></li>
+          <li><span class="doc-list-bullet">▸</span><span>Clienti fedeli + sito moderno = crescita vendite online</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">📊</span>
+      La Situazione Attuale
+    </div>
+
+    <div class="metrics-grid" style="grid-template-columns:repeat(4,1fr);">
+      <div class="metric-card">
+        <div class="metric-value red">3.8</div>
+        <div class="metric-label">Score Tecnico</div>
+        <div class="metric-sub">su 10 possibili</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value red">~6s</div>
+        <div class="metric-label">Tempo Caricamento</div>
+        <div class="metric-sub">benchmark: &lt;2s</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value orange">53%</div>
+        <div class="metric-label">Abbandono Mobile</div>
+        <div class="metric-sub">per lentezza pagina</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value red">5</div>
+        <div class="metric-label">Rischi Critici</div>
+        <div class="metric-sub">identificati</div>
+      </div>
+    </div>
+
+    <div class="highlight-box highlight-red">
+      <div class="highlight-title">⚠️ Costo stimato dell'inazione</div>
+      <p class="highlight-text">Un sito lento e con problemi di sicurezza comporta perdite stimate di <strong>€40.000–€80.000/mese</strong> tra mancate conversioni, penalizzazioni SEO e potenziali sanzioni per non conformità GDPR/EAA. Ogni mese che passa senza intervento è un mese di opportunità perdute.</p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 2 / 5</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+<!-- ================================================
+     PAGINA 3 — La Proposta: Eurobrico 2.0
+================================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Proposta Commerciale — Eurobrico 2.0</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-label">La Nostra Proposta</div>
+    <h2 class="section-title-lg">Eurobrico 2.0</h2>
+    <p class="section-subtitle">Un e-commerce completamente nuovo, progettato per convertire e crescere</p>
+
+    <div class="highlight-box highlight-orange">
+      <div class="highlight-title">Filosofia di Design</div>
+      <p class="highlight-text">Ispirandoci all'esperienza <strong>Apple Store</strong> — semplicità, eleganza, focus sul prodotto — e adattandola al mondo del bricolage, creeremo un sito che <em>vende prima di tutto</em>. Ogni elemento progettato per guidare l'utente all'acquisto in modo naturale e piacevole.</p>
+    </div>
+
+    <div class="two-col" style="margin-top:16px;">
+      <div>
+        <h3 class="sub-heading">🛒 E-Commerce Avanzato</h3>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet">✓</span> Ricerca AI con suggerimenti in tempo reale</li>
+          <li><span class="doc-list-bullet">✓</span> Filtri intelligenti per ogni categoria</li>
+          <li><span class="doc-list-bullet">✓</span> One-page checkout ultra-semplificato</li>
+          <li><span class="doc-list-bullet">✓</span> Apple Pay, Google Pay, Satispay, Scalapay</li>
+          <li><span class="doc-list-bullet">✓</span> Stock real-time su 24 negozi</li>
+          <li><span class="doc-list-bullet">✓</span> Wishlist condivisibile</li>
+        </ul>
+        <h3 class="sub-heading">📱 PWA — App senza App Store</h3>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet">✓</span> Installabile su smartphone</li>
+          <li><span class="doc-list-bullet">✓</span> Catalogo consultabile offline</li>
+          <li><span class="doc-list-bullet">✓</span> Notifiche push per offerte</li>
+          <li><span class="doc-list-bullet">✓</span> Scansione codice a barre</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub-heading">🏪 Integrazione Negozi</h3>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet">✓</span> "Prenota e Ritira" in 2 ore</li>
+          <li><span class="doc-list-bullet">✓</span> Geolocalizzazione automatica</li>
+          <li><span class="doc-list-bullet">✓</span> Orari e contatti real-time</li>
+          <li><span class="doc-list-bullet">✓</span> Promozioni per singolo negozio</li>
+        </ul>
+        <h3 class="sub-heading">🔍 SEO & Marketing</h3>
+        <ul class="doc-list">
+          <li><span class="doc-list-bullet">✓</span> SEO ottimizzato per 50.000+ prodotti</li>
+          <li><span class="doc-list-bullet">✓</span> Rich snippets Google (prezzi, stelle)</li>
+          <li><span class="doc-list-bullet">✓</span> Blog/Magazine SEO-driven</li>
+          <li><span class="doc-list-bullet">✓</span> Analytics dashboard unificata</li>
+          <li><span class="doc-list-bullet">✓</span> IT + DE (bilingue Alto Adige)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">📅</span>
+      Timeline del Progetto
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">1</div>
+        <div class="timeline-content">
+          <div class="timeline-phase">Settimane 1–4</div>
+          <div class="timeline-title">Fase 1 — Discovery & Ricerca</div>
+          <div class="timeline-sub">UX Research, analisi competitor, architettura informazione, wireframe navigazione</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">2</div>
+        <div class="timeline-content">
+          <div class="timeline-phase">Settimane 5–10</div>
+          <div class="timeline-title">Fase 2 — Design UI/UX</div>
+          <div class="timeline-sub">Design system completo, mockup tutte le pagine, prototipo interattivo, test usabilità</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">3</div>
+        <div class="timeline-content">
+          <div class="timeline-phase">Settimane 11–20</div>
+          <div class="timeline-title">Fase 3 — Sviluppo (Frontend + Backend)</div>
+          <div class="timeline-sub">Next.js/React, CMS headless, API integrazioni, pagamenti, PWA</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue">4</div>
+        <div class="timeline-content">
+          <div class="timeline-phase" style="color:var(--blue)">Settimane 21–24</div>
+          <div class="timeline-title">Fase 4 — QA, Test & Migrazione</div>
+          <div class="timeline-sub">Testing cross-device, migrazione dati, redirect SEO, formazione team</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue">5</div>
+        <div class="timeline-content">
+          <div class="timeline-phase" style="color:var(--blue)">Settimane 25–26</div>
+          <div class="timeline-title">Fase 5 — Lancio & Ottimizzazione</div>
+          <div class="timeline-sub">Go-live, monitoring intensivo 24/7, correzioni post-lancio</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 3 / 5</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+<!-- ================================================
+     PAGINA 4 — PREVENTIVO DETTAGLIATO
+================================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Proposta Commerciale — Eurobrico 2.0</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-label">Preventivo Economico</div>
+    <h2 class="section-title-lg">Investimento Dettagliato</h2>
+    <p class="section-subtitle">Trasparenza totale su ogni voce di costo</p>
+
+    <!-- PACKAGES OVERVIEW -->
+    <div class="package-grid">
+      <!-- Essenziale -->
+      <div class="package-card">
+        <div class="package-header">
+          <div class="package-name">Essenziale</div>
+          <div class="package-tagline">Per iniziare a crescere</div>
+        </div>
+        <div class="package-price-wrap">
+          <div class="package-price">€18.000</div>
+          <div class="package-price-note">una tantum · IVA esclusa</div>
+        </div>
+        <div class="package-features">
+          <div class="package-feature"><span class="feature-check">✓</span> Redesign completo homepage</div>
+          <div class="package-feature"><span class="feature-check">✓</span> E-commerce funzionale</div>
+          <div class="package-feature"><span class="feature-check">✓</span> Design responsive mobile</div>
+          <div class="package-feature"><span class="feature-check">✓</span> SEO base + sitemap</div>
+          <div class="package-feature"><span class="feature-check">✓</span> Pagamenti: Carta, PayPal</div>
+          <div class="package-feature"><span class="feature-check">✓</span> 2 mesi supporto incluso</div>
+          <div class="package-feature" style="color:#8E8E93">✗ PWA / App mobile</div>
+          <div class="package-feature" style="color:#8E8E93">✗ Ricerca AI</div>
+          <div class="package-feature" style="color:#8E8E93">✗ Bilingue IT/DE</div>
+        </div>
+      </div>
+
+      <!-- Professionale (RECOMMENDED) -->
+      <div class="package-card recommended">
+        <div class="package-header">
+          <div class="package-recommended-badge">⭐ RACCOMANDATO</div>
+          <div class="package-name">Professionale</div>
+          <div class="package-tagline">La soluzione completa</div>
+        </div>
+        <div class="package-price-wrap">
+          <div class="package-price">€35.000</div>
+          <div class="package-price-note">una tantum · IVA esclusa</div>
+        </div>
+        <div class="package-features">
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> Tutto di Essenziale +</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> PWA installabile su mobile</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> Ricerca AI + autocomplete</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> Stock real-time 24 negozi</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> Apple Pay, Google Pay, Satispay</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> Bilingue IT + DE</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> Analytics dashboard unificata</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> Blog/Magazine integrato</div>
+          <div class="package-feature"><span class="feature-check feature-check-orange">✓</span> 4 mesi supporto incluso</div>
+        </div>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="package-card">
+        <div class="package-header">
+          <div class="package-name">Enterprise</div>
+          <div class="package-tagline">Massima personalizzazione</div>
+        </div>
+        <div class="package-price-wrap">
+          <div class="package-price">€55.000</div>
+          <div class="package-price-note">una tantum · IVA esclusa</div>
+        </div>
+        <div class="package-features">
+          <div class="package-feature"><span class="feature-check">✓</span> Tutto di Professionale +</div>
+          <div class="package-feature"><span class="feature-check">✓</span> Integrazione ERP/POS custom</div>
+          <div class="package-feature"><span class="feature-check">✓</span> Portale B2B professionisti</div>
+          <div class="package-feature"><span class="feature-check">✓</span> Programma fedeltà digitale</div>
+          <div class="package-feature"><span class="feature-check">✓</span> Personalizzazione AI avanzata</div>
+          <div class="package-feature"><span class="feature-check">✓</span> Infrastructure cloud dedicata</div>
+          <div class="package-feature"><span class="feature-check">✓</span> SLA garantito 99.9%</div>
+          <div class="package-feature"><span class="feature-check">✓</span> 8 mesi supporto dedicato</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILED BREAKDOWN — Professionale -->
+    <div class="section-heading section-heading-blue">
+      <span class="heading-icon" style="background:var(--orange)">€</span>
+      Dettaglio Costi — Pacchetto Professionale
+    </div>
+
+    <div class="price-section">
+      <div class="price-section-title">🎨 Design & UX</div>
+      <div class="price-detail-table">
+        <div class="price-detail-row">
+          <div><div class="price-item-name">UX Research, Personas, User Journey</div><div class="price-item-note">4 settimane · analisi utenti, competitor, wireframe</div></div>
+          <div class="price-item-value">€2.200</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">UI Design completo (20+ schermate)</div><div class="price-item-note">Home, categorie, prodotto, checkout, account, negozi...</div></div>
+          <div class="price-item-value">€4.500</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Design System & Componenti</div><div class="price-item-note">Libreria componenti riutilizzabili, brand guidelines digitali</div></div>
+          <div class="price-item-value">€1.500</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Prototipo interattivo + test usabilità</div><div class="price-item-note">Figma interattivo, test con 5 utenti reali, iterazioni</div></div>
+          <div class="price-item-value">€800</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-section">
+      <div class="price-section-title">⚙️ Sviluppo Frontend</div>
+      <div class="price-detail-table">
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Sviluppo Frontend (Next.js / React)</div><div class="price-item-note">Homepage, listing, pagine prodotto, account, checkout</div></div>
+          <div class="price-item-value">€7.500</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">PWA & Mobile Optimization</div><div class="price-item-note">Service worker, manifest, offline cache, bottom navigation</div></div>
+          <div class="price-item-value">€2.000</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Ricerca AI + filtri avanzati</div><div class="price-item-note">Integrazione Algolia o Elasticsearch, autocomplete, filtri dinamici</div></div>
+          <div class="price-item-value">€2.500</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Localizzazione IT + DE</div><div class="price-item-note">Sistema i18n, traduzioni, contenuti per regione Alto Adige</div></div>
+          <div class="price-item-value">€1.200</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-section">
+      <div class="price-section-title">🔧 Sviluppo Backend & Integrazioni</div>
+      <div class="price-detail-table">
+        <div class="price-detail-row">
+          <div><div class="price-item-name">CMS Headless (Strapi) + API REST</div><div class="price-item-note">Gestione prodotti, contenuti, promozioni senza sviluppatori</div></div>
+          <div class="price-item-value">€3.500</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Integrazione pagamenti completa</div><div class="price-item-note">Stripe, PayPal, Apple Pay, Google Pay, Satispay, Scalapay</div></div>
+          <div class="price-item-value">€1.800</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Store locator + stock real-time</div><div class="price-item-note">API negozi, disponibilità prodotti, mappa interattiva</div></div>
+          <div class="price-item-value">€2.000</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Analytics dashboard unificata</div><div class="price-item-note">Sostituzione di 4 tool separati con un unico sistema server-side</div></div>
+          <div class="price-item-value">€1.500</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-section">
+      <div class="price-section-title">🚀 SEO, QA, Migrazione & Lancio</div>
+      <div class="price-detail-table">
+        <div class="price-detail-row">
+          <div><div class="price-item-name">SEO tecnico avanzato</div><div class="price-item-note">Ottimizzazione 50.000+ prodotti, schema markup, sitemap, redirect map</div></div>
+          <div class="price-item-value">€2.000</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Testing & QA cross-browser/device</div><div class="price-item-note">Test su 12+ dispositivi e browser, test di carico, accessibilità WCAG</div></div>
+          <div class="price-item-value">€1.200</div>
+        </div>
+        <div class="price-detail-row">
+          <div><div class="price-item-name">Migrazione dati + formazione team</div><div class="price-item-note">Import prodotti/clienti, 2 sessioni di training per il team Eurobrico</div></div>
+          <div class="price-item-value">€800</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-total-row">
+      <div>
+        <div class="price-total-label">Totale Pacchetto Professionale</div>
+        <div style="font-size:11px;color:#8E8E93;margin-top:2px;">IVA esclusa · include 4 mesi di supporto post-lancio</div>
+      </div>
+      <div class="price-total-value">€35.000</div>
+    </div>
+
+    <div class="two-col" style="margin-top:16px;">
+      <div class="highlight-box highlight-gray">
+        <div class="highlight-title">Costi Ricorrenti Annuali</div>
+        <div class="price-detail-table">
+          <div class="price-detail-row" style="font-size:12px;">
+            <span class="price-item-name">Hosting cloud (VPS + CDN)</span>
+            <span class="price-item-value">€1.800/anno</span>
+          </div>
+          <div class="price-detail-row" style="font-size:12px;">
+            <span class="price-item-name">Manutenzione & aggiornamenti</span>
+            <span class="price-item-value">€2.400/anno</span>
+          </div>
+          <div class="price-detail-row" style="font-size:12px;">
+            <span class="price-item-name">Supporto tecnico (ore/mese)</span>
+            <span class="price-item-value">€1.800/anno</span>
+          </div>
+        </div>
+        <div style="font-size:13px;font-weight:800;margin-top:6px;">Totale annuo: <span style="color:var(--orange)">€6.000/anno</span></div>
+      </div>
+      <div class="highlight-box highlight-green">
+        <div class="highlight-title">Modalità di Pagamento</div>
+        <div class="price-detail-table">
+          <div class="price-detail-row" style="font-size:12px;"><span>30% alla firma del contratto</span><span style="font-weight:700">€10.500</span></div>
+          <div class="price-detail-row" style="font-size:12px;"><span>25% al completamento del design</span><span style="font-weight:700">€8.750</span></div>
+          <div class="price-detail-row" style="font-size:12px;"><span>25% al completamento sviluppo</span><span style="font-weight:700">€8.750</span></div>
+          <div class="price-detail-row" style="font-size:12px;"><span>20% al go-live</span><span style="font-weight:700">€7.000</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 4 / 5</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+<!-- ================================================
+     PAGINA 5 — ROI + Prossimi Passi
+================================================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Proposta Commerciale — Eurobrico 2.0</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-label">Ritorno sull'Investimento</div>
+    <h2 class="section-title-lg">ROI Previsto — Anno 1</h2>
+    <p class="section-subtitle">Stime conservative basate su dati di settore e benchmark e-commerce italiano</p>
+
+    <div class="roi-box">
+      <div style="font-size:13px; color:rgba(255,255,255,0.7); margin-bottom:8px;">Investimento Pacchetto Professionale: €35.000</div>
+      <div class="roi-grid">
+        <div class="roi-item">
+          <div class="roi-value">+€120k</div>
+          <div class="roi-label">Beneficio stimato anno 1</div>
+        </div>
+        <div class="roi-item">
+          <div class="roi-value">343%</div>
+          <div class="roi-label">ROI anno 1</div>
+        </div>
+        <div class="roi-item">
+          <div class="roi-value">~4 mesi</div>
+          <div class="roi-label">Payback period</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-top:16px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Voce di Beneficio</th>
+            <th>Baseline</th>
+            <th>Ipotesi</th>
+            <th class="center">Valore Annuo Stimato</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="bold">Aumento tasso di conversione online</td>
+            <td>~0.8%</td>
+            <td>+50% → ~1.2%</td>
+            <td class="center green bold">+€45.000</td>
+          </tr>
+          <tr>
+            <td class="bold">Crescita traffico organico (SEO)</td>
+            <td>Traffico attuale</td>
+            <td>+60% in 12 mesi</td>
+            <td class="center green bold">+€30.000</td>
+          </tr>
+          <tr>
+            <td class="bold">Riduzione carrelli abbandonati</td>
+            <td>~75% abbandono</td>
+            <td>Email recovery (-20%)</td>
+            <td class="center green bold">+€18.000</td>
+          </tr>
+          <tr>
+            <td class="bold">Aumento valore scontrino medio (+10%)</td>
+            <td>Scontrino attuale</td>
+            <td>Upsell + cross-sell AI</td>
+            <td class="center green bold">+€20.000</td>
+          </tr>
+          <tr>
+            <td class="bold">Risparmio costi supporto (-15%)</td>
+            <td>Costo attuale</td>
+            <td>Automazione FAQ, CMS</td>
+            <td class="center green bold">+€8.000</td>
+          </tr>
+          <tr style="background:#F0FFF4;">
+            <td class="bold" colspan="3">TOTALE BENEFICIO STIMATO ANNO 1</td>
+            <td class="center green bold" style="font-size:16px;">+€121.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box highlight-orange" style="margin-top:8px;">
+      <div class="highlight-title">⚠️ Rischio Legale Evitato</div>
+      <p class="highlight-text">Il nuovo sito sarà conforme al <strong>European Accessibility Act (EAA)</strong> entrato in vigore nel giugno 2025. La non conformità del sito attuale espone Eurobrico a sanzioni potenziali. Un investimento nell'accessibilità è anche un investimento in compliance legale.</p>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">🤝</span>
+      Perché Scegliere Oficina Ranuk
+    </div>
+
+    <div class="two-col">
+      <ul class="doc-list">
+        <li><span class="doc-list-bullet">✓</span><strong>Trasparenza totale</strong> — ogni euro giustificato, nessun costo nascosto</li>
+        <li><span class="doc-list-bullet">✓</span><strong>Team dedicato</strong> — un team stabile per tutta la durata del progetto</li>
+        <li><span class="doc-list-bullet">✓</span><strong>Proprietà del codice</strong> — tutto il codice sorgente è vostro al 100%</li>
+      </ul>
+      <ul class="doc-list">
+        <li><span class="doc-list-bullet">✓</span><strong>Agile & iterativo</strong> — demo settimanali, voi vedete sempre i progressi</li>
+        <li><span class="doc-list-bullet">✓</span><strong>Partnership long-term</strong> — non forniamo e sparizioni, rimaniamo partner</li>
+        <li><span class="doc-list-bullet">✓</span><strong>Supporto incluso</strong> — 4 mesi di assistenza post-lancio senza costi aggiuntivi</li>
+      </ul>
+    </div>
+
+    <div class="section-heading section-heading-blue">
+      <span class="heading-icon" style="background:var(--blue)">→</span>
+      Prossimi Passi
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot" style="font-size:11px;width:36px;height:36px;">Step 1</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Incontro di approfondimento (gratuito)</div>
+          <div class="timeline-sub">Una call o incontro di 60 minuti per rispondere alle vostre domande e presentare il prototipo live</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue" style="font-size:11px;width:36px;height:36px;">Step 2</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Workshop di Discovery (mezza giornata)</div>
+          <div class="timeline-sub">Sessione con il vostro team per definire requisiti specifici, integrazioni esistenti e priorità di business</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue" style="font-size:11px;width:36px;height:36px;">Step 3</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Proposta finale + contratto</div>
+          <div class="timeline-sub">Entro 10 giorni dal workshop, proposta definitiva con scope dettagliato e contratto</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <h3>Riepilogo dell'Offerta</h3>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="summary-label">Pacchetto Raccomandato</div>
+          <div class="summary-value">Professionale</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Investimento Totale</div>
+          <div class="summary-value orange-text">€35.000 + IVA</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Durata Progetto</div>
+          <div class="summary-value">26 settimane (~6 mesi)</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">ROI Previsto Anno 1</div>
+          <div class="summary-value orange-text">+€121.000 (343%)</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#8E8E93;margin-top:16px;text-align:center;">
+      Questa proposta è valida per 30 giorni dalla data di emissione. Prezzi IVA esclusa. Tutte le stime di ROI sono indicative basate su dati di settore.<br>
+      Oficina Ranuk si riserva il diritto di rivedere i prezzi al variare significativo dei requisiti.<br><br>
+      <strong>© 2026 Oficina Ranuk — Digital Solutions</strong> · Documento riservato ad uso esclusivo di Eurobrico S.p.A.
+    </p>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 5 / 5</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+</body>
+</html>

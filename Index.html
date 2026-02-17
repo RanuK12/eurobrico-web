@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eurobrico: il tuo negozio di bricolage, fai da te, arredo casa e giardino. Scopri le migliori offerte online.">
+    <title>Eurobrico | Fai da te, Arredo, Giardino e Riscaldamento</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --euro-orange: #FF6B00;
+            --euro-blue: #003366;
+            --euro-dark: #1A1A1A;
+            --euro-gray: #F4F4F4;
+            --euro-text: #333333;
+            --white: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--euro-text);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- ACCESSIBILITY --- */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--euro-orange);
+            color: white;
+            padding: 8px;
+            z-index: 10001;
+            transition: top 0.3s;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* --- HEADER --- */
+        .top-nav {
+            background-color: var(--euro-dark);
+            color: var(--white);
+            font-size: 0.75rem;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header {
+            padding: 1.5rem 5%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            background: var(--white);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--euro-orange);
+            letter-spacing: -1px;
+        }
+        .logo span { color: var(--euro-blue); }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            width: 100%;
+            justify-self: center;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 20px;
+            padding-right: 50px;
+            border: 2px solid #E0E0E0;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-container input:focus { border-color: var(--euro-orange); }
+
+        .search-container button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            background: var(--euro-orange);
+            border: none;
+            color: white;
+            padding: 0 20px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .header-action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .header-action-item i { font-size: 1.25rem; margin-bottom: 4px; color: var(--euro-blue); }
+
+        /* --- NAVIGATION --- */
+        .mega-menu {
+            background: var(--white);
+            border-bottom: 1px solid #eee;
+            padding: 0 5%;
+        }
+
+        .mega-menu ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .mega-menu a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--euro-blue);
+            text-transform: uppercase;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .mega-menu a:hover {
+            color: var(--euro-orange);
+            border-bottom-color: var(--euro-orange);
+        }
+
+        /* --- HERO --- */
+        .hero-slider {
+            height: 500px;
+            background: #222;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-slide {
+            padding: 0 10%;
+            max-width: 600px;
+        }
+
+        .hero-slide h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-slide p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background: var(--euro-orange);
+            color: white;
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 700;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255,107,0,0.4); }
+
+        /* --- CATEGORIES --- */
+        .section-padding { padding: 4rem 5%; }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background: var(--euro-gray);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-card:hover { background: var(--euro-orange); color: white; }
+        .category-card i { font-size: 2.5rem; margin-bottom: 1rem; }
+        .category-card h3 { font-size: 0.9rem; text-transform: uppercase; }
+
+        /* --- PRODUCTS --- */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover { box-shadow: var(--shadow-md); border-color: transparent; }
+
+        .product-badge {
+            background: #E53935;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 2px;
+            align-self: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .product-img-wrapper {
+            height: 200px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; height: 3rem; overflow: hidden; }
+        
+        .product-rating { color: #FFB300; font-size: 0.8rem; margin-bottom: 1rem; }
+
+        .price-container { display: flex; align-items: baseline; gap: 10px; margin-top: auto; }
+        .current-price { font-size: 1.5rem; font-weight: 800; color: var(--euro-orange); }
+        .old-price { font-size: 0.9rem; text-decoration: line-through; color: #999; }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            margin-top: 1rem;
+            background: var(--euro-blue);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-to-cart:hover { background: var(--euro-orange); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--euro-dark);
+            color: white;
+            padding: 5rem 5% 2rem;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .footer-col h4 { margin-bottom: 1.5rem; color: var(--euro-orange); }
+        .footer-col ul li { margin-bottom: 0.75rem; font-size: 0.9rem; color: #BBB; }
+        .footer-col ul li:hover { color: white; cursor: pointer; }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .main-header { grid-template-columns: auto auto; }
+            .search-container { grid-row: 2; grid-column: 1 / span 2; margin-top: 1rem; }
+            .mega-menu { display: none; }
+            .hero-slide h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            .header-action-item span { display: none; }
+            .hero-slider { height: 400px; }
+            .hero-slide h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
+    <div class="top-nav">
+        <div><i class="fas fa-truck"></i> Consegna rapida in tutta Italia</div>
+        <div style="display:flex; gap: 20px;">
+            <span><i class="fas fa-map-marker-alt"></i> Trova negozio</span>
+            <span><i class="fas fa-phone"></i> Assistenza 800 123 456</span>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <a href="/" class="logo" aria-label="Eurobrico Home">EURO<span>BRICO</span></a>
+        
+        <form class="search-container" role="search">
+            <input type="text" placeholder="Cerca tra oltre 40.000 prodotti..." aria-label="Cerca prodotti">
+            <button type="submit" aria-label="Esegui ricerca"><i class="fas fa-search"></i></button>
+        </form>
+
+        <div class="header-actions">
+            <div class="header-action-item">
+                <i class="far fa-user"></i>
+                <span>Accedi</span>
+            </div>
+            <div class="header-action-item">
+                <i class="far fa-heart"></i>
+                <span>Preferiti</span>
+            </div>
+            <div class="header-action-item" style="position:relative;">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Carrello</span>
+                <span id="cart-badge" style="position:absolute; top:-8px; right:5px; background:var(--euro-orange); color:white; border-radius:50%; padding:2px 6px; font-size:0.6rem;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mega-menu" aria-label="Menu principale">
+        <ul>
+            <li><a href="#">Giardino</a></li>
+            <li><a href="#">Arredo</a></li>
+            <li><a href="#">Riscaldamento</a></li>
+            <li><a href="#">Utensileria</a></li>
+            <li><a href="#">Illuminazione</a></li>
+            <li><a href="#">Edilizia</a></li>
+            <li><a href="#" style="color:var(--euro-orange)">Offerte %</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-slider" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1581781894506-993289ba4007?q=80&w=2000&auto=format&fit=crop') center/cover;">
+            <div class="hero-slide">
+                <h1>Tutto per il tuo Fai da Te</h1>
+                <p>Scopri la nuova collezione giardino e le offerte esclusive per rinnovare la tua casa.</p>
+                <a href="#" class="btn-primary">Scopri le Offerte</a>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section-padding">
+            <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">Sfoglia per Categoria</h2>
+            <p style="color: #666; margin-bottom: 2rem;">Trova tutto quello che ti serve per i tuoi progetti.</p>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-seedling" style="color: #4CAF50;"></i>
+                    <h3>Giardino</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-couch" style="color: #795548;"></i>
+                    <h3>Arredo</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-fire" style="color: #FF5722;"></i>
+                    <h3>Stufe</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-tools" style="color: #607D8B;"></i>
+                    <h3>Utensili</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-paint-roller" style="color: #E91E63;"></i>
+                    <h3>Vernici</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-lightbulb" style="color: #FFC107;"></i>
+                    <h3>Luce</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="section-padding" style="background: var(--euro-gray);">
+            <div style="display:flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem;">
+                <div>
+                    <h2 style="font-size: 2rem; font-weight: 800;">I Più Venduti</h2>
+                    <p style="color: #666;">I prodotti preferiti dai nostri clienti questa settimana.</p>
+                </div>
+                <a href="#" style="font-weight: 700; color: var(--euro-blue); border-bottom: 2px solid var(--euro-orange);">Vedi tutti</a>
+            </div>
+
+            <div class="product-list" id="featured-products">
+                <!-- Products will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="section-padding" style="text-align: center;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
+                <div>
+                    <i class="fas fa-undo-alt" style="font-size: 2rem; color: var(--euro-orange); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Reso Facile</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Hai 30 giorni per cambiare idea sui tuoi acquisti.</p>
+                </div>
+                <div>
+                    <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--euro-orange); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Pagamento Sicuro</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Sistemi di pagamento criptati e sicuri al 100%.</p>
+                </div>
+                <div>
+                    <i class="fas fa-headset" style="font-size: 2rem; color: var(--euro-orange); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Supporto Esperti</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Il nostro team è a tua disposizione per ogni dubbio.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-col" style="grid-column: span 2;">
+                <div class="footer-logo" style="color: var(--euro-orange);">EURO<span>BRICO</span></div>
+                <p style="color: #888; margin-bottom: 2rem; font-size: 0.9rem;">
+                    Da oltre 30 anni, Eurobrico è il punto di riferimento per il bricolage e il fai da te in Italia. Con più di 25 negozi e un catalogo online vastissimo, aiutiamo ogni giorno migliaia di persone a migliorare la propria casa.
+                </p>
+                <div style="display:flex; gap: 1rem;">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li>Chi Siamo</li>
+                    <li>Lavora con Noi</li>
+                    <li>I Nostri Negozi</li>
+                    <li>Blog & Consigli</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Servizio Clienti</h4>
+                <ul>
+                    <li>Contatti</li>
+                    <li>Spedizioni</li>
+                    <li>Resi e Rimborsi</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="font-size: 0.8rem; color: #888; margin-bottom: 1rem;">Iscriviti per ricevere offerte esclusive e consigli.</p>
+                <div style="display:flex;">
+                    <input type="email" placeholder="Email" style="background:#333; border:none; padding:10px; color:white; width: 100%;">
+                    <button style="background:var(--euro-orange); border:none; padding:10px; color:white;"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Eurobrico S.p.A. - P.IVA 01234567890 - Tutti i diritti riservati.</div>
+            <div style="display:flex; gap: 20px;">
+                <span>Privacy Policy</span>
+                <span>Cookie Policy</span>
+                <span>Termini e Condizioni</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Tagliaerba Elettrico 1200W",
+                category: "Giardino",
+                price: 79.90,
+                oldPrice: 99.00,
+                rating: 4,
+                img: "https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=400&auto=format&fit=crop"
+            },
+            {
+                id: 2,
+                name: "Trapano Avvitatore a Batteria 18V",
+                category: "Utensileria",
+                price: 124.50,
+                oldPrice: null,
+                rating: 5,
+                img: "https://images.unsplash.com/photo-1504148455328-497c5ef215d0?q=80&w=400&auto=format&fit=crop"
+            },
+            {
+                id: 3,
+                name: "Set Mobile da Giardino 'Rimini'",
+                category: "Arredo",
+                price: 299.00,
+                oldPrice: 349.00,
+                rating: 4,
+                img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400&auto=format&fit=crop"
+            },
+            {
+                id: 4,
+                name: "Stufa a Pellet 9kW Ventilata",
+                category: "Riscaldamento",
+                price: 890.00,
+                oldPrice: 1050.00,
+                rating: 5,
+                img: "https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?q=80&w=400&auto=format&fit=crop"
+            }
+        ];
+
+        const productGrid = document.getElementById('featured-products');
+        const cartBadge = document.getElementById('cart-badge');
+        let cartCount = 0;
+
+        function renderProducts() {
+            productGrid.innerHTML = products.map(product => `
+                <div class="product-card">
+                    ${product.oldPrice ? `<div class="product-badge">OFFERTA</div>` : ''}
+                    <div class="product-img-wrapper">
+                        <img src="${product.img}" alt="${product.name}" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span style="font-size:0.7rem; color:#888; text-transform:uppercase;">${product.category}</span>
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-rating">
+                            ${Array(5).fill(0).map((_, i) => `<i class="${i < product.rating ? 'fas' : 'far'} fa-star"></i>`).join('')}
+                        </div>
+                        <div class="price-container">
+                            <span class="current-price">${product.price.toFixed(2)} €</span>
+                            ${product.oldPrice ? `<span class="old-price">${product.oldPrice.toFixed(2)} €</span>` : ''}
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart() {
+            cartCount++;
+            cartBadge.innerText = cartCount;
+            cartBadge.style.transform = 'scale(1.2)';
+            setTimeout(() => cartBadge.style.transform = 'scale(1)', 200);
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>

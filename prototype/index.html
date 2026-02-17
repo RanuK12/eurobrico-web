@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eurobrico — Bricolage, Arredo e Fai da Te | La Tua Casa, Il Tuo Progetto</title>
+  <meta name="description" content="Scopri oltre 50.000 prodotti per il bricolage, l'arredo, il giardino e il fai da te. 24 negozi in tutto il Nord Italia. Spedizione gratuita sopra €49." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       EUROBRICO 2.0 — DESIGN SYSTEM
+       Ispirato all'eleganza Apple Store
+    ============================================================ */
+
+    :root {
+      --orange: #FF6B00;
+      --orange-light: #FF8C33;
+      --orange-dark: #E05500;
+      --blue: #003366;
+      --blue-light: #004D99;
+      --dark: #1A1A1A;
+      --dark-2: #2D2D2D;
+      --gray-1: #F5F5F7;
+      --gray-2: #E8E8ED;
+      --gray-3: #C7C7CC;
+      --gray-4: #8E8E93;
+      --gray-5: #48484A;
+      --white: #FFFFFF;
+      --success: #30D158;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.14);
+      --shadow-xl: 0 20px 60px rgba(0,0,0,0.20);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--gray-1); }
+    ::-webkit-scrollbar-thumb { background: var(--gray-3); border-radius: 3px; }
+
+    /* ── Top Bar ── */
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      position: relative;
+      z-index: 100;
+    }
+    .topbar span { opacity: 0.85; margin: 0 16px; }
+    .topbar strong { opacity: 1; }
+    .topbar a { color: var(--white); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── Header ── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: box-shadow var(--transition);
+    }
+    .header.scrolled { box-shadow: var(--shadow-md); }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* Logo */
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+    .logo-euro { font-size: 22px; font-weight: 900; color: var(--orange); letter-spacing: -0.5px; }
+    .logo-brico { font-size: 22px; font-weight: 900; color: var(--blue); letter-spacing: -0.5px; }
+    .logo-tagline { font-size: 9px; color: var(--gray-4); text-transform: uppercase; letter-spacing: 0.1em; margin-left: 6px; align-self: flex-end; margin-bottom: 3px; display: none; }
+
+    /* Search */
+    .search-wrap {
+      flex: 1;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .search-form {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-input {
+      width: 100%;
+      height: 40px;
+      padding: 0 44px 0 40px;
+      border: 1.5px solid var(--gray-2);
+      border-radius: 22px;
+      font-size: 14px;
+      font-family: var(--font);
+      background: var(--gray-1);
+      outline: none;
+      transition: all var(--transition);
+      color: var(--dark);
+    }
+    .search-input:focus {
+      background: var(--white);
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.12);
+    }
+    .search-icon {
+      position: absolute;
+      left: 13px;
+      color: var(--gray-4);
+      pointer-events: none;
+    }
+    .search-btn {
+      position: absolute;
+      right: 6px;
+      height: 28px;
+      padding: 0 14px;
+      background: var(--orange);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .search-btn:hover { background: var(--orange-dark); }
+
+    /* Nav Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .action-btn {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      transition: background var(--transition), color var(--transition);
+      text-decoration: none;
+    }
+    .action-btn:hover { background: var(--gray-1); color: var(--orange); }
+    .action-badge {
+      position: absolute;
+      top: 4px; right: 4px;
+      background: var(--orange);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      min-width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 3px;
+    }
+    .store-selector {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border: 1.5px solid var(--gray-2);
+      border-radius: 22px;
+      background: transparent;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--dark);
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .store-selector:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* ── Main Navigation ── */
+    .nav {
+      border-bottom: 1px solid var(--gray-2);
+      background: var(--white);
+    }
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 0;
+    }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      transition: color var(--transition);
+      white-space: nowrap;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%; right: 50%;
+      height: 2px;
+      background: var(--orange);
+      transition: left var(--transition), right var(--transition);
+    }
+    .nav-item:hover .nav-link { color: var(--orange); }
+    .nav-item:hover .nav-link::after { left: 0; right: 0; }
+    .nav-link.nav-offerte { color: var(--orange); font-weight: 700; }
+
+    /* Mega Menu */
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 680px;
+      background: var(--white);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity var(--transition), transform var(--transition);
+      border-top: 2px solid var(--orange);
+      z-index: 500;
+    }
+    .nav-item:hover .mega-menu {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    .mega-col h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-4);
+      margin-bottom: 12px;
+    }
+    .mega-col a {
+      display: block;
+      font-size: 13.5px;
+      color: var(--dark-2);
+      text-decoration: none;
+      padding: 4px 0;
+      transition: color var(--transition), padding-left var(--transition);
+    }
+    .mega-col a:hover { color: var(--orange); padding-left: 6px; }
+    .mega-featured {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-2);
+      margin-top: 4px;
+    }
+    .mega-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      text-decoration: none;
+      background: var(--gray-1);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .mega-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .mega-card-img {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    }
+    .mega-card-label {
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    /* ── Hero Slider ── */
+    .hero {
+      position: relative;
+      height: 640px;
+      overflow: hidden;
+      background: var(--dark);
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 8s ease;
+    }
+    .hero-slide.active .hero-bg { transform: scale(1.04); }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      max-width: 580px;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.80);
+      max-width: 460px;
+      margin-bottom: 32px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--orange);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255,107,0,0.4); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); border-color: white; transform: translateY(-1px); }
+
+    /* Hero Dots */
+    .hero-dots {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .hero-dot {
+      width: 8px; height: 8px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+    }
+    .hero-dot.active { background: var(--white); width: 24px; }
+
+    /* ── Section ── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1400px; margin: 0 auto; }
+    .section-header { margin-bottom: 40px; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--gray-4);
+      margin-top: 8px;
+      font-weight: 400;
+    }
+
+    /* ── Category Grid (Apple Cards) ── */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .cat-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      height: 220px;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .cat-card:nth-child(1) { grid-column: span 2; height: 280px; }
+    .cat-card:nth-child(6) { grid-column: span 2; height: 200px; }
+    .cat-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s ease;
+    }
+    .cat-card:hover .cat-bg { transform: scale(1.06); }
+    .cat-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    }
+    .cat-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 24px;
+    }
+    .cat-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .cat-link {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 500;
+    }
+    .cat-link svg { transition: transform var(--transition); }
+    .cat-card:hover .cat-link svg { transform: translateX(4px); }
+
+    /* ── Products Scroll ── */
+    .products-scroll {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .products-scroll::-webkit-scrollbar { display: none; }
+
+    .product-card {
+      flex: 0 0 240px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1.5px solid var(--gray-2);
+      overflow: hidden;
+      scroll-snap-align: start;
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      cursor: pointer;
+    }
+    .product-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--gray-3);
+    }
+    .product-img-wrap {
+      position: relative;
+      height: 180px;
+      background: var(--gray-1);
+      overflow: hidden;
+    }
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .product-card:hover .product-img { transform: scale(1.05); }
+    .product-badge {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: var(--orange);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .product-badge.badge-new { background: var(--blue); }
+    .product-badge.badge-sale { background: #FF3B30; }
+    .wishlist-btn {
+      position: absolute;
+      top: 8px; right: 8px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-4);
+      transition: all var(--transition);
+      backdrop-filter: blur(4px);
+    }
+    .wishlist-btn:hover { color: #FF3B30; transform: scale(1.1); }
+    .wishlist-btn.active { color: #FF3B30; }
+
+    .product-info { padding: 14px 16px 16px; }
+    .product-cat {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+    .product-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.35;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .product-stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+    .stars { color: #FFB800; font-size: 11px; }
+    .reviews-count { font-size: 11px; color: var(--gray-4); }
+    .product-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .price-current { font-size: 18px; font-weight: 800; color: var(--dark); }
+    .price-old { font-size: 13px; color: var(--gray-4); text-decoration: line-through; }
+    .price-save { font-size: 11px; color: #FF3B30; font-weight: 700; }
+    .add-btn {
+      width: 100%;
+      height: 38px;
+      background: var(--dark);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .add-btn:hover { background: var(--orange); transform: translateY(-1px); }
+    .add-btn.added { background: var(--success); }
+    .shipping-tag {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--success);
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* ── Promo Banner ── */
+    .promo-banner {
+      padding: 0 24px;
+      margin-bottom: 0;
+    }
+    .promo-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .promo-card {
+      border-radius: var(--radius-xl);
+      padding: 40px 44px;
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .promo-card-1 { background: linear-gradient(135deg, var(--orange) 0%, #FF8C00 100%); }
+    .promo-card-2 { background: linear-gradient(135deg, var(--blue) 0%, #0055AA 100%); }
+    .promo-card::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+    .promo-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 8px;
+    }
+    .promo-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      width: fit-content;
+    }
+    .btn-white:hover { background: white; color: var(--dark); border-color: white; }
+
+    /* ── Store Locator ── */
+    .stores-section { background: var(--gray-1); }
+    .stores-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .stores-map {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      height: 380px;
+      background: #E8EDF2;
+      position: relative;
+    }
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
+      position: relative;
+    }
+    .map-dot {
+      position: absolute;
+      width: 14px; height: 14px;
+      background: var(--orange);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: var(--shadow-md);
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,0,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(255,107,0,0); }
+    }
+    .store-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .store-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      border: 1.5px solid var(--gray-2);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .store-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); }
+    .store-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .store-open { font-size: 12px; color: var(--success); font-weight: 600; }
+    .store-closed { font-size: 12px; color: var(--gray-4); font-weight: 500; }
+    .store-dist { font-size: 12px; color: var(--gray-4); margin-top: 2px; }
+
+    /* ── Magazine ── */
+    .magazine-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 20px;
+    }
+    .article-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: white;
+      border: 1.5px solid var(--gray-2);
+      text-decoration: none;
+      display: block;
+      transition: all var(--transition);
+    }
+    .article-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--gray-3); }
+    .article-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: var(--gray-2);
+    }
+    .article-card:first-child .article-img { height: 260px; }
+    .article-body { padding: 20px; }
+    .article-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .article-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .article-card:first-child .article-title { font-size: 20px; }
+    .article-excerpt {
+      font-size: 13px;
+      color: var(--gray-5);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .article-date { font-size: 11px; color: var(--gray-4); margin-top: 12px; }
+
+    /* ── Trust Bar ── */
+    .trust-bar {
+      background: var(--white);
+      border-top: 1px solid var(--gray-2);
+      border-bottom: 1px solid var(--gray-2);
+      padding: 32px 24px;
+    }
+    .trust-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .trust-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
+    }
+    .trust-text h4 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .trust-text p { font-size: 12px; color: var(--gray-4); }
+
+    /* ── Newsletter ── */
+    .newsletter {
+      background: linear-gradient(135deg, var(--blue) 0%, #0044AA 100%);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .newsletter h2 { font-size: 36px; font-weight: 800; color: white; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .newsletter p { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      max-width: 460px;
+      margin: 0 auto 16px;
+    }
+    .newsletter-input {
+      flex: 1;
+      height: 48px;
+      padding: 0 18px;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      font-family: var(--font);
+      outline: none;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+    .newsletter-input::placeholder { color: rgba(255,255,255,0.5); }
+    .newsletter-input:focus { background: rgba(255,255,255,0.2); }
+    .newsletter-btn {
+      height: 48px;
+      padding: 0 24px;
+      background: var(--orange);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition);
+    }
+    .newsletter-btn:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .newsletter-note { font-size: 12px; color: rgba(255,255,255,0.45); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      padding: 64px 24px 32px;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-inner { max-width: 1400px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo-euro { font-size: 24px; }
+    .footer-brand .logo-brico { font-size: 24px; }
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 12px;
+      color: rgba(255,255,255,0.45);
+    }
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all var(--transition);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .social-btn:hover { background: var(--orange); color: white; }
+    .footer-col h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      padding: 4px 0;
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: var(--orange); }
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .payment-chip {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.6);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom-links { display: flex; gap: 16px; }
+    .footer-bottom-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.65); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      padding: 8px 14px;
+      border-radius: 50px;
+    }
+    .rating-stars { color: #FFB800; font-size: 13px; }
+    .rating-text { font-size: 12px; color: rgba(255,255,255,0.6); }
+
+    /* ── Scroll Animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── Back to Top ── */
+    .back-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--dark);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all var(--transition);
+      z-index: 999;
+    }
+    .back-top.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .back-top:hover { background: var(--orange); }
+
+    /* ── Mini Cart ── */
+    .mini-cart {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      width: 340px;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      border: 1.5px solid var(--gray-2);
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: all var(--transition);
+      z-index: 600;
+    }
+    .mini-cart.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .cart-wrap { position: relative; }
+    .mini-cart h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+    .mini-cart-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-2);
+    }
+    .mini-cart-img {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-sm);
+      background: var(--gray-1);
+      object-fit: cover;
+    }
+    .mini-cart-info { flex: 1; }
+    .mini-cart-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+    .mini-cart-price { font-size: 14px; font-weight: 700; color: var(--orange); }
+    .mini-cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0 16px;
+      font-weight: 700;
+    }
+    .mini-cart-total span:last-child { font-size: 18px; color: var(--dark); }
+    .checkout-btn {
+      width: 100%;
+      height: 44px;
+      background: var(--dark);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .checkout-btn:hover { background: var(--orange); }
+    .empty-cart { text-align: center; padding: 24px 0; color: var(--gray-4); font-size: 14px; }
+
+    /* ── Mobile Hamburger ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      border: none;
+      background: transparent;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Mobile Menu ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: white;
+      z-index: 999;
+      overflow-y: auto;
+      padding: 80px 24px 40px;
+      transform: translateX(100%);
+      transition: transform var(--transition);
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-2);
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--dark);
+    }
+    .mobile-nav-link:hover { color: var(--orange); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .cat-grid { grid-template-columns: 1fr 1fr; }
+      .cat-card:nth-child(1) { grid-column: span 2; }
+      .cat-card:nth-child(6) { grid-column: span 2; }
+      .magazine-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: block; }
+      .logo-tagline { display: none; }
+      .store-selector { display: none; }
+      .hero { height: 520px; }
+      .hero-content { padding: 0 24px; }
+      .hero-title { font-size: 32px; }
+      .hero-sub { font-size: 15px; }
+      .cat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .cat-card:nth-child(1) { grid-column: span 2; }
+      .cat-card:nth-child(6) { grid-column: span 2; }
+      .promo-grid { grid-template-columns: 1fr; }
+      .stores-grid { grid-template-columns: 1fr; }
+      .magazine-grid { grid-template-columns: 1fr; }
+      .trust-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-input { border-radius: 14px; }
+      .newsletter-btn { border-radius: 14px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .search-wrap { max-width: none; }
+    }
+
+    @media (max-width: 480px) {
+      .topbar { font-size: 11px; }
+      .topbar span:not(:first-child) { display: none; }
+      section { padding: 52px 16px; }
+      .trust-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <strong>🚚 Spedizione gratuita per ordini superiori a €49</strong>
+  <span>📞 Chiama e Compra: +39 0461 780 444</span>
+  <span>⭐ 4.6/5 su 7.370 recensioni verificate</span>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="#" class="logo" aria-label="Eurobrico Homepage">
+      <span class="logo-euro">EURO</span><span class="logo-brico">BRICO</span>
+    </a>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <form class="search-form" onsubmit="return false;">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="search" class="search-input" placeholder="Cerca tra 50.000 prodotti..." aria-label="Cerca prodotti" />
+        <button class="search-btn" type="submit">Cerca</button>
+      </form>
+    </div>
+
+    <!-- Actions -->
+    <div class="header-actions">
+      <button class="store-selector" onclick="alert('Seleziona il negozio più vicino')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        Scegli negozio
+      </button>
+
+      <a href="#" class="action-btn" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/>
+        </svg>
+      </a>
+
+      <a href="#" class="action-btn" aria-label="Lista desideri" id="wishlistBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="action-badge" id="wishlistCount" style="display:none">0</span>
+      </a>
+
+      <div class="cart-wrap">
+        <button class="action-btn" aria-label="Carrello" onclick="toggleCart()" id="cartBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="action-badge" id="cartCount">0</span>
+        </button>
+        <!-- Mini Cart -->
+        <div class="mini-cart" id="miniCart">
+          <h3>Il tuo carrello</h3>
+          <div id="cartItems">
+            <div class="empty-cart">
+              <p>🛒</p>
+              <p>Il carrello è vuoto</p>
+            </div>
+          </div>
+          <div id="cartTotal" style="display:none">
+            <div class="mini-cart-total">
+              <span>Totale</span>
+              <span id="cartTotalPrice">€0.00</span>
+            </div>
+            <button class="checkout-btn">Vai al Checkout →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN NAV -->
+<nav class="nav" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          Giardino
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <!-- Mega Menu -->
+        <div class="mega-menu" role="menu">
+          <div class="mega-col">
+            <h4>Giardinaggio</h4>
+            <a href="#">Tagliaerba & Robot</a>
+            <a href="#">Motoseghe</a>
+            <a href="#">Decespugliatori</a>
+            <a href="#">Soffiatori</a>
+            <a href="#">Tagliasiepi</a>
+            <a href="#">Biotrituratori</a>
+          </div>
+          <div class="mega-col">
+            <h4>Arredo Giardino</h4>
+            <a href="#">Mobili da Esterni</a>
+            <a href="#">Barbecue & Grill</a>
+            <a href="#">Piscine</a>
+            <a href="#">Casette da Giardino</a>
+            <a href="#">Fontane</a>
+            <a href="#">Illuminazione Esterna</a>
+          </div>
+          <div class="mega-col">
+            <h4>Piante & Cura</h4>
+            <a href="#">Irrigazione</a>
+            <a href="#">Antiparassitari</a>
+            <a href="#">Terricci & Substrati</a>
+            <a href="#">Vasi & Fioriere</a>
+            <a href="#">Semi & Piante</a>
+          </div>
+          <div class="mega-featured">
+            <a href="#" class="mega-card">
+              <div class="mega-card-img" style="background: linear-gradient(135deg, #4CAF50, #81C784);"></div>
+              <div class="mega-card-label">🌱 Robot Tagliaerba</div>
+            </a>
+            <a href="#" class="mega-card">
+              <div class="mega-card-img" style="background: linear-gradient(135deg, #FF7043, #FF8A65);"></div>
+              <div class="mega-card-label">🔥 Barbecue & Grill</div>
+            </a>
+            <a href="#" class="mega-card">
+              <div class="mega-card-img" style="background: linear-gradient(135deg, #1E88E5, #42A5F5);"></div>
+              <div class="mega-card-label">💧 Sistemi Irrigazione</div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#" class="nav-link">Arredo Casa <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Utensili <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Edilizia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Illuminazione <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Riscaldamento <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Pet Shop <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Marchi</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Negozi</a></li>
+      <li class="nav-item"><a href="#" class="nav-link nav-offerte">🔥 Offerte</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#" class="mobile-nav-link">Giardino <span>›</span></a>
+  <a href="#" class="mobile-nav-link">Arredo Casa <span>›</span></a>
+  <a href="#" class="mobile-nav-link">Utensili <span>›</span></a>
+  <a href="#" class="mobile-nav-link">Edilizia <span>›</span></a>
+  <a href="#" class="mobile-nav-link">Illuminazione <span>›</span></a>
+  <a href="#" class="mobile-nav-link">Riscaldamento <span>›</span></a>
+  <a href="#" class="mobile-nav-link">Pet Shop <span>›</span></a>
+  <a href="#" class="mobile-nav-link" style="color: var(--orange); font-weight:800">🔥 Offerte del Momento</a>
+  <div style="margin-top:24px; display:flex; flex-direction:column; gap:10px;">
+    <a href="#" style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--gray-5);text-decoration:none;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      Trova il tuo negozio
+    </a>
+    <a href="#" style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--gray-5);text-decoration:none;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +39 0461 780 444
+    </a>
+  </div>
+</div>
+
+<!-- HERO SLIDER -->
+<section class="hero" aria-label="Offerte in evidenza">
+  <!-- Slide 1 -->
+  <div class="hero-slide active" id="slide-0">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80&auto=format&fit=crop');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Nuova Collezione Primavera 2026</div>
+      <h1 class="hero-title">Il tuo giardino dei sogni inizia qui</h1>
+      <p class="hero-sub">Robot tagliaerba, set da giardino premium e tutto per far sbocciare la tua primavera.</p>
+      <div class="hero-ctas">
+        <a href="#prodotti" class="btn-primary">
+          Scopri la Collezione
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn-secondary">Vedi le Offerte</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="hero-slide" id="slide-1">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80&auto=format&fit=crop');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Ristrutturazione & Design</div>
+      <h1 class="hero-title">Rinnova la tua casa con stile</h1>
+      <p class="hero-sub">Pitture, pavimenti, rivestimenti e tutto quello che serve per trasformare gli spazi.</p>
+      <div class="hero-ctas">
+        <a href="#categorie" class="btn-primary">
+          Esplora i Materiali
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn-secondary">Consulta gli Esperti</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="hero-slide" id="slide-2">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80&auto=format&fit=crop');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Elettroutensili Premium</div>
+      <h1 class="hero-title">Precisione e potenza per ogni progetto</h1>
+      <p class="hero-sub">Makita, DeWalt, Bosch e i migliori marchi professionali. Scontati fino al 35%.</p>
+      <div class="hero-ctas">
+        <a href="#prodotti" class="btn-primary">
+          Vedi gli Utensili
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn-secondary">Scopri le Promo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="hero-dots" role="tablist" aria-label="Slide navigator">
+    <button class="hero-dot active" onclick="goToSlide(0)" aria-label="Slide 1" role="tab"></button>
+    <button class="hero-dot" onclick="goToSlide(1)" aria-label="Slide 2" role="tab"></button>
+    <button class="hero-dot" onclick="goToSlide(2)" aria-label="Slide 3" role="tab"></button>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+      <div class="trust-text">
+        <h4>Spedizione Gratuita</h4>
+        <p>Ordini superiori a €49</p>
+      </div>
+    </div>
+    <div class="trust-item reveal reveal-delay-1">
+      <div class="trust-icon" style="background:var(--blue)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <div class="trust-text">
+        <h4>Reso Facile 30 Giorni</h4>
+        <p>Rimborso garantito</p>
+      </div>
+    </div>
+    <div class="trust-item reveal reveal-delay-2">
+      <div class="trust-icon" style="background:#34C759">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      </div>
+      <div class="trust-text">
+        <h4>Pagamento Sicuro</h4>
+        <p>SSL, PayPal, Apple Pay</p>
+      </div>
+    </div>
+    <div class="trust-item reveal reveal-delay-3">
+      <div class="trust-icon" style="background:#FF9500">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="trust-text">
+        <h4>Esperti a Disposizione</h4>
+        <p>Lun–Ven 9:00–18:00</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORY GRID -->
+<section id="categorie" style="background: var(--gray-1);">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Esplora</div>
+      <h2 class="section-title">Le nostre categorie</h2>
+      <p class="section-sub">Oltre 50.000 prodotti in 28 categorie</p>
+    </div>
+    <div class="cat-grid">
+      <a href="#" class="cat-card reveal">
+        <div class="cat-bg" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80&auto=format&fit=crop');"></div>
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-name">Giardino</div>
+          <div class="cat-link">Scopri →</div>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal reveal-delay-1">
+        <div class="cat-bg" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&auto=format&fit=crop');"></div>
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-name">Arredo Casa</div>
+          <div class="cat-link">Scopri →</div>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal reveal-delay-1">
+        <div class="cat-bg" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80&auto=format&fit=crop');"></div>
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-name">Utensili</div>
+          <div class="cat-link">Scopri →</div>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal reveal-delay-2">
+        <div class="cat-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop');"></div>
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-name">Illuminazione</div>
+          <div class="cat-link">Scopri →</div>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal reveal-delay-2">
+        <div class="cat-bg" style="background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdfcdc?w=600&q=80&auto=format&fit=crop');"></div>
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-name">Edilizia</div>
+          <div class="cat-link">Scopri →</div>
+        </div>
+      </a>
+      <a href="#" class="cat-card reveal reveal-delay-3">
+        <div class="cat-bg" style="background-image: url('https://images.unsplash.com/photo-1601758003122-53c40e686a19?w=900&q=80&auto=format&fit=crop');"></div>
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-name">Pet Shop</div>
+          <div class="cat-link">Scopri →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section id="prodotti">
+  <div class="section-inner">
+    <div class="section-header reveal" style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <div class="section-label">I Più Venduti</div>
+        <h2 class="section-title">Prodotti della Settimana</h2>
+      </div>
+      <a href="#" style="font-size:14px; font-weight:600; color:var(--orange); text-decoration:none;">Vedi tutti →</a>
+    </div>
+    <div class="products-scroll" id="productScroll">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img class="product-img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=75&auto=format&fit=crop" alt="Tagliaerba Elettrico" loading="lazy" />
+          <span class="product-badge badge-sale">-20%</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Aggiungi ai preferiti">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Giardino</div>
+          <div class="product-name">Tagliaerba Elettrico 1200W con Raccogli Erba</div>
+          <div class="product-stars">
+            <span class="stars">★★★★★</span>
+            <span class="reviews-count">(142)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">€79,90</span>
+            <span class="price-old">€99,00</span>
+            <span class="price-save">-€19,10</span>
+          </div>
+          <button class="add-btn" onclick="addToCart(this, 'Tagliaerba Elettrico 1200W', 79.90)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Aggiungi al Carrello
+          </button>
+          <div class="shipping-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Spedizione gratuita
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img class="product-img" src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=75&auto=format&fit=crop" alt="Trapano Avvitatore Makita" loading="lazy" />
+          <span class="product-badge badge-new">Nuovo</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Aggiungi ai preferiti">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Elettroutensili</div>
+          <div class="product-name">Trapano Avvitatore 18V — Makita DDF482Z</div>
+          <div class="product-stars">
+            <span class="stars">★★★★★</span>
+            <span class="reviews-count">(89)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">€149,90</span>
+          </div>
+          <button class="add-btn" onclick="addToCart(this, 'Trapano Avvitatore 18V Makita', 149.90)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Aggiungi al Carrello
+          </button>
+          <div class="shipping-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Spedizione gratuita
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img class="product-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=75&auto=format&fit=crop" alt="Set Mobili Giardino" loading="lazy" />
+          <span class="product-badge badge-sale">-21%</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Aggiungi ai preferiti">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Arredo Giardino</div>
+          <div class="product-name">Set Mobili Giardino "Rimini" 4 pezzi in Rattan</div>
+          <div class="product-stars">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews-count">(64)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">€299,00</span>
+            <span class="price-old">€379,00</span>
+            <span class="price-save">-€80</span>
+          </div>
+          <button class="add-btn" onclick="addToCart(this, 'Set Mobili Giardino Rimini', 299.00)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Aggiungi al Carrello
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img class="product-img" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdfcdc?w=400&q=75&auto=format&fit=crop" alt="Stufa a Pellet" loading="lazy" />
+          <span class="product-badge badge-sale">-15%</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Aggiungi ai preferiti">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Riscaldamento</div>
+          <div class="product-name">Stufa a Pellet Nordica 9kW — Thermorossi</div>
+          <div class="product-stars">
+            <span class="stars">★★★★★</span>
+            <span class="reviews-count">(31)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">€890,00</span>
+            <span class="price-old">€1.050,00</span>
+            <span class="price-save">-€160</span>
+          </div>
+          <button class="add-btn" onclick="addToCart(this, 'Stufa a Pellet Nordica 9kW', 890.00)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Aggiungi al Carrello
+          </button>
+          <div class="shipping-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Spedizione gratuita
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img class="product-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75&auto=format&fit=crop" alt="Lampada LED" loading="lazy" />
+          <span class="product-badge badge-sale">-25%</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Aggiungi ai preferiti">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Illuminazione</div>
+          <div class="product-name">Lampada LED Sospensione Design "Orbit" — 15W</div>
+          <div class="product-stars">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews-count">(57)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">€89,90</span>
+            <span class="price-old">€119,00</span>
+            <span class="price-save">-€29,10</span>
+          </div>
+          <button class="add-btn" onclick="addToCart(this, 'Lampada LED Sospensione Orbit', 89.90)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Aggiungi al Carrello
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img class="product-img" src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?w=400&q=75&auto=format&fit=crop" alt="Cuccia Termica Cani" loading="lazy" />
+          <span class="product-badge badge-new">Nuovo</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Aggiungi ai preferiti">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Pet Shop</div>
+          <div class="product-name">Cuccia Termica Premium per Cani Taglia XL</div>
+          <div class="product-stars">
+            <span class="stars">★★★★★</span>
+            <span class="reviews-count">(28)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">€64,90</span>
+          </div>
+          <button class="add-btn" onclick="addToCart(this, 'Cuccia Termica Premium XL', 64.90)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Aggiungi al Carrello
+          </button>
+          <div class="shipping-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Spedizione gratuita
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<div class="promo-banner">
+  <div class="promo-grid">
+    <div class="promo-card promo-card-1 reveal">
+      <div class="promo-label">Offerte del Momento</div>
+      <div class="promo-title">Fino al<br>-40% su<br>tutto il giardino</div>
+      <a href="#" class="btn-white">
+        Vedi le Offerte
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="promo-card promo-card-2 reveal reveal-delay-1">
+      <div class="promo-label">Servizio Esclusivo</div>
+      <div class="promo-title">Chiama & Compra con i nostri Esperti</div>
+      <a href="tel:+390461780444" class="btn-white">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +39 0461 780 444
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- STORE LOCATOR -->
+<section class="stores-section" id="negozi">
+  <div class="section-inner">
+    <div class="stores-grid">
+      <div>
+        <div class="section-label reveal">I Nostri Negozi</div>
+        <h2 class="section-title reveal">Oltre 24 negozi in tutto il Nord Italia</h2>
+        <p style="color:var(--gray-5); margin-top:12px; line-height:1.6; font-size:15px;" class="reveal">Dal Trentino al Veneto, dal Friuli alla Lombardia. Trovi Eurobrico vicino a te con esperti pronti ad aiutarti.</p>
+        <div class="store-cards reveal">
+          <div class="store-card">
+            <div class="store-name">Trento Centro</div>
+            <div class="store-open">● Aperto ora</div>
+            <div class="store-dist">Via dell'Industria, 8 · 2.1 km</div>
+          </div>
+          <div class="store-card">
+            <div class="store-name">Rovereto</div>
+            <div class="store-open">● Aperto ora</div>
+            <div class="store-dist">Via Brennero, 12 · 18 km</div>
+          </div>
+          <div class="store-card">
+            <div class="store-name">Bolzano</div>
+            <div class="store-closed">○ Apre lunedì 9:00</div>
+            <div class="store-dist">Via Roma, 55 · 54 km</div>
+          </div>
+          <div class="store-card">
+            <div class="store-name">Treviso</div>
+            <div class="store-open">● Aperto ora</div>
+            <div class="store-dist">Via Noalese, 3 · 142 km</div>
+          </div>
+        </div>
+        <a href="#" class="btn-primary" style="margin-top:20px; display:inline-flex;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Trova il Negozio più Vicino
+        </a>
+      </div>
+      <div class="stores-map reveal">
+        <div class="map-placeholder">
+          <!-- Map Dots (simulated) -->
+          <div class="map-dot" style="top:30%; left:40%;"></div>
+          <div class="map-dot" style="top:45%; left:36%; animation-delay:0.4s;"></div>
+          <div class="map-dot" style="top:25%; left:50%; animation-delay:0.8s;"></div>
+          <div class="map-dot" style="top:55%; left:65%; animation-delay:1.2s;"></div>
+          <div class="map-dot" style="top:60%; left:72%; animation-delay:0.6s;"></div>
+          <div class="map-dot" style="top:65%; left:80%; animation-delay:1s;"></div>
+          <div class="map-dot" style="top:40%; left:30%; animation-delay:0.2s;"></div>
+          <div style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); background:white; padding:8px 16px; border-radius:50px; font-size:13px; font-weight:600; color:var(--dark); box-shadow:var(--shadow-md); white-space:nowrap;">
+            🗺️ 24+ negozi nel Nord Italia
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAGAZINE -->
+<section id="magazine">
+  <div class="section-inner">
+    <div class="section-header reveal" style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <div class="section-label">Consigli & Ispirazione</div>
+        <h2 class="section-title">Il Magazine del Fai da Te</h2>
+      </div>
+      <a href="#" style="font-size:14px; font-weight:600; color:var(--orange); text-decoration:none;">Tutti gli articoli →</a>
+    </div>
+    <div class="magazine-grid">
+      <a href="#" class="article-card reveal">
+        <img class="article-img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=75&auto=format&fit=crop" alt="Preparare il giardino per la primavera" loading="lazy" />
+        <div class="article-body">
+          <div class="article-tag">Giardinaggio</div>
+          <div class="article-title">Come preparare il giardino per una primavera perfetta: la guida completa</div>
+          <div class="article-excerpt">Dalla potatura degli arbusti alla semina del prato, ecco tutti i passaggi fondamentali per avere un giardino splendido già dalla prima settimana di marzo.</div>
+          <div class="article-date">12 Febbraio 2026 · 8 min lettura</div>
+        </div>
+      </a>
+      <a href="#" class="article-card reveal reveal-delay-1">
+        <img class="article-img" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdfcdc?w=400&q=75&auto=format&fit=crop" alt="Scegliere la stufa perfetta" loading="lazy" />
+        <div class="article-body">
+          <div class="article-tag">Riscaldamento</div>
+          <div class="article-title">Stufa a pellet vs. a legna: quale scegliere?</div>
+          <div class="article-excerpt">Un confronto dettagliato tra i due sistemi più amati per riscaldare casa in modo naturale ed efficiente.</div>
+          <div class="article-date">5 Febbraio 2026 · 5 min lettura</div>
+        </div>
+      </a>
+      <a href="#" class="article-card reveal reveal-delay-2">
+        <img class="article-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=75&auto=format&fit=crop" alt="Rinnovare il bagno" loading="lazy" />
+        <div class="article-body">
+          <div class="article-tag">Casa</div>
+          <div class="article-title">10 idee per rinnovare il bagno senza ristrutturare</div>
+          <div class="article-excerpt">Piccoli interventi che fanno grande differenza: dalle fughe ai sanitari, ai dettagli di design.</div>
+          <div class="article-date">28 Gennaio 2026 · 6 min lettura</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div style="max-width:1400px; margin:0 auto; position:relative; z-index:1;">
+    <h2 class="reveal">Iscriviti alla Newsletter</h2>
+    <p class="reveal">Ricevi offerte esclusive, consigli degli esperti e anteprime sui nuovi prodotti. Solo il meglio, niente spam.</p>
+    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+      <input type="email" class="newsletter-input" placeholder="La tua email..." required aria-label="Indirizzo email" />
+      <button type="submit" class="newsletter-btn">Iscriviti Gratis →</button>
+    </form>
+    <p class="newsletter-note">Cliccando su "Iscriviti" accetti la nostra Privacy Policy. Puoi disiscriverti in qualsiasi momento.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="Eurobrico Homepage">
+          <span class="logo-euro" style="font-size:24px">EURO</span><span class="logo-brico" style="font-size:24px; color:rgba(255,255,255,0.8)">BRICO</span>
+        </a>
+        <p class="footer-desc">Da oltre 30 anni il punto di riferimento per il bricolage, l'arredo e il fai da te nel Nord Italia. 24 negozi, 50.000 prodotti, un solo obiettivo: aiutarti a realizzare i tuoi progetti.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">ig</a>
+          <a href="#" class="social-btn" aria-label="YouTube">yt</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Azienda</h5>
+        <a href="#">Chi Siamo</a>
+        <a href="#">La Nostra Storia</a>
+        <a href="#">Lavora con Noi</a>
+        <a href="#">I Nostri Negozi</a>
+        <a href="#">Sostenibilità</a>
+        <a href="#">Media & Press</a>
+      </div>
+      <div class="footer-col">
+        <h5>Assistenza</h5>
+        <a href="#">Servizio Clienti</a>
+        <a href="#">Come Ordinare</a>
+        <a href="#">Spedizioni</a>
+        <a href="#">Resi & Rimborsi</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contattaci</a>
+      </div>
+      <div class="footer-col">
+        <h5>Pagamenti Accettati</h5>
+        <div class="payment-methods">
+          <span class="payment-chip">Visa</span>
+          <span class="payment-chip">Mastercard</span>
+          <span class="payment-chip">PayPal</span>
+          <span class="payment-chip">Apple Pay</span>
+          <span class="payment-chip">Google Pay</span>
+          <span class="payment-chip">Satispay</span>
+          <span class="payment-chip">Scalapay</span>
+          <span class="payment-chip">Bonifico</span>
+        </div>
+        <div style="margin-top:20px;" class="rating-badge">
+          <span class="rating-stars">★★★★★</span>
+          <span class="rating-text">4.6/5 · 7.370 recensioni Feedaty</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Eurobrico S.p.A. — Via della Stazione 100, 38051 Castel Ivano (TN) — P.IVA 01234567890</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Termini e Condizioni</a>
+        <a href="#">Informativa GDPR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Torna in cima">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script>
+  // ============================================================
+  // EUROBRICO 2.0 — JAVASCRIPT
+  // ============================================================
+
+  // Cart state
+  let cart = [];
+  let wishlistCount = 0;
+
+  // ── Header on scroll ──
+  const header = document.getElementById('header');
+  const backTop = document.getElementById('backTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      header.classList.add('scrolled');
+      backTop.classList.add('visible');
+    } else {
+      header.classList.remove('scrolled');
+      backTop.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  // ── Hero Slider ──
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  let autoSlideTimer;
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    resetAutoSlide();
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(nextSlide, 5000);
+  }
+
+  resetAutoSlide();
+
+  // ── Scroll Reveal ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Cart Functionality ──
+  function updateCartUI() {
+    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+    document.getElementById('cartCount').textContent = count;
+
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<div class="empty-cart"><p>🛒</p><p>Il carrello è vuoto</p></div>';
+      cartTotal.style.display = 'none';
+    } else {
+      cartItems.innerHTML = cart.map(item => `
+        <div class="mini-cart-item">
+          <div class="mini-cart-img" style="background:var(--gray-1); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:22px;">🛍</div>
+          <div class="mini-cart-info">
+            <div class="mini-cart-name">${item.name}</div>
+            <div class="mini-cart-price">€${(item.price * item.qty).toFixed(2).replace('.', ',')} ${item.qty > 1 ? `<span style="font-size:11px;color:var(--gray-4)">x${item.qty}</span>` : ''}</div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('cartTotalPrice').textContent = '€' + total.toFixed(2).replace('.', ',');
+      cartTotal.style.display = 'block';
+    }
+  }
+
+  function addToCart(btn, name, price) {
+    // Animate button
+    btn.classList.add('added');
+    const origHTML = btn.innerHTML;
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Aggiunto!';
+
+    setTimeout(() => {
+      btn.classList.remove('added');
+      btn.innerHTML = origHTML;
+    }, 1800);
+
+    // Add to cart
+    const existing = cart.find(i => i.name === name);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    updateCartUI();
+
+    // Flash cart button
+    const cartBtn = document.getElementById('cartBtn');
+    cartBtn.style.color = 'var(--orange)';
+    setTimeout(() => { cartBtn.style.color = ''; }, 600);
+  }
+
+  // Cart toggle
+  let cartOpen = false;
+  function toggleCart() {
+    cartOpen = !cartOpen;
+    document.getElementById('miniCart').classList.toggle('open', cartOpen);
+  }
+
+  // Close cart on outside click
+  document.addEventListener('click', (e) => {
+    const cartWrap = document.querySelector('.cart-wrap');
+    if (!cartWrap.contains(e.target) && cartOpen) {
+      cartOpen = false;
+      document.getElementById('miniCart').classList.remove('open');
+    }
+  });
+
+  // ── Wishlist ──
+  function toggleWishlist(btn) {
+    btn.classList.toggle('active');
+    if (btn.classList.contains('active')) {
+      wishlistCount++;
+      btn.style.background = '#FFE5E5';
+    } else {
+      wishlistCount = Math.max(0, wishlistCount - 1);
+      btn.style.background = '';
+    }
+    const badge = document.getElementById('wishlistCount');
+    badge.style.display = wishlistCount > 0 ? 'flex' : 'none';
+    badge.textContent = wishlistCount;
+  }
+
+  // ── Mobile Menu ──
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  // ── Newsletter ──
+  function subscribeNewsletter(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    const input = e.target.querySelector('input');
+    btn.textContent = '✓ Iscritto!';
+    btn.style.background = 'var(--success)';
+    input.value = '';
+    setTimeout(() => {
+      btn.textContent = 'Iscriviti Gratis →';
+      btn.style.background = '';
+    }, 3000);
+  }
+
+  // ── Search placeholder rotation ──
+  const placeholders = [
+    'Cerca tra 50.000 prodotti...',
+    'Es: tagliaerba, trapano, stufa...',
+    'Cosa stai cercando oggi?',
+    'Es: Makita, Bosch, DeWalt...',
+  ];
+  let pIndex = 0;
+  const searchInput = document.querySelector('.search-input');
+  setInterval(() => {
+    pIndex = (pIndex + 1) % placeholders.length;
+    searchInput.placeholder = placeholders[pIndex];
+  }, 3500);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Presentazione Esecutiva — Eurobrico 2.0</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  .agenda-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-2);
+    font-size: 14px;
+  }
+  .agenda-num {
+    width: 30px; height: 30px;
+    background: var(--orange);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .problem-card {
+    background: var(--gray-1);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--orange);
+  }
+  .problem-card.critico { border-left-color: #CC0000; background: #FFF8F8; }
+  .problem-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .problem-title { font-size: 14px; font-weight: 800; }
+  .problem-desc { font-size: 12px; color: #48484A; line-height: 1.5; }
+  .problem-impact { font-size: 11px; font-weight: 700; color: var(--orange); margin-top: 5px; }
+  .transform-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-2);
+    font-size: 13px;
+  }
+  .transform-before { flex: 1; color: #CC0000; }
+  .transform-arrow { font-size: 18px; color: var(--gray-3); flex-shrink: 0; }
+  .transform-after { flex: 1; color: var(--success); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover page-break">
+  <div class="cover-deco-1"></div>
+  <div class="cover-deco-2"></div>
+  <div class="cover-deco-3"></div>
+
+  <div class="cover-header">
+    <div class="cover-logo">
+      <span class="cover-logo-euro">EURO</span><span class="cover-logo-brico">BRICO</span>
+    </div>
+    <div class="cover-prep-by">
+      <div class="cover-prep-label">Presentato da</div>
+      <div class="cover-prep-name">Oficina Ranuk — Digital Solutions</div>
+    </div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-doc-type">Presentazione Esecutiva</div>
+    <h1 class="cover-title">Il Futuro<br>Digitale di<br><span class="accent">Eurobrico</span></h1>
+    <div class="cover-divider"></div>
+    <p class="cover-subtitle">Una visione chiara su dove siete oggi, dove potete arrivare, e come possiamo portarvi lì insieme.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Destinatario</div>
+        <div class="cover-meta-value">Direzione Generale</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Data</div>
+        <div class="cover-meta-value">Febbraio 2026</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Durata stimata</div>
+        <div class="cover-meta-value">45–60 minuti</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span class="cover-confidential">🔒 Documento riservato e confidenziale</span>
+    <span class="cover-page-num">Oficina Ranuk © 2026</span>
+  </div>
+</div>
+
+<!-- PAGINA 2 — Agenda + Eurobrico Oggi -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Presentazione Esecutiva — Eurobrico 2.0</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+    <div class="two-col">
+      <div>
+        <div class="section-label">Ordine del Giorno</div>
+        <h2 class="section-title-lg" style="font-size:22px;">Agenda</h2>
+        <div style="margin-top:16px;">
+          <div class="agenda-item"><div class="agenda-num">1</div> Chi siamo — Oficina Ranuk</div>
+          <div class="agenda-item"><div class="agenda-num">2</div> Il vostro sito oggi — analisi critica</div>
+          <div class="agenda-item"><div class="agenda-num">3</div> La visione — Eurobrico 2.0</div>
+          <div class="agenda-item"><div class="agenda-num">4</div> Demo del prototipo (live)</div>
+          <div class="agenda-item"><div class="agenda-num">5</div> Investimento e timeline</div>
+          <div class="agenda-item" style="border-bottom:none;"><div class="agenda-num">6</div> Domande e prossimi passi</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">Eurobrico in Numeri</div>
+        <h2 class="section-title-lg" style="font-size:22px;">La vostra forza</h2>
+        <div class="metrics-grid" style="grid-template-columns:1fr 1fr;margin-top:16px;">
+          <div class="metric-card orange-card">
+            <div class="metric-value orange">24+</div>
+            <div class="metric-label">Negozi Fisici</div>
+          </div>
+          <div class="metric-card blue-card">
+            <div class="metric-value blue">50.000</div>
+            <div class="metric-label">Prodotti</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">32k</div>
+            <div class="metric-label">Clienti / Giorno</div>
+          </div>
+          <div class="metric-card orange-card">
+            <div class="metric-value orange">4.6/5</div>
+            <div class="metric-label">Rating Clienti</div>
+            <div class="metric-sub">7.370 recensioni</div>
+          </div>
+          <div class="metric-card blue-card">
+            <div class="metric-value blue">30+</div>
+            <div class="metric-label">Anni di Storia</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">500</div>
+            <div class="metric-label">Dipendenti</div>
+          </div>
+        </div>
+        <div class="highlight-box highlight-green" style="margin-top:12px;">
+          <div class="highlight-title">La vostra posizione</div>
+          <p class="highlight-text" style="font-size:12px;">Un brand eccellente, clienti fedeli, presenza capillare nel territorio. La base per diventare il punto di riferimento e-commerce del bricolage nel Nord Italia è già lì. Manca solo la piattaforma digitale adeguata.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">📊</span>
+      Il Sito Attuale — Score Globale: 3.8 / 10
+    </div>
+
+    <div class="score-bar-wrap">
+      <div class="score-row">
+        <span class="score-name">🔒 Sicurezza</span>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:30%"></div></div>
+        <span class="score-num" style="color:#CC0000">3/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">⚡ Performance</span>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:40%"></div></div>
+        <span class="score-num" style="color:#CC0000">4/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">🔍 SEO</span>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:50%;background:#FFB800"></div></div>
+        <span class="score-num" style="color:#997700">5/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">🎨 UX / Design</span>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:40%"></div></div>
+        <span class="score-num" style="color:#CC0000">4/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">♿ Accessibilità</span>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:30%"></div></div>
+        <span class="score-num" style="color:#CC0000">3/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">📱 Mobile</span>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:50%;background:#FFB800"></div></div>
+        <span class="score-num" style="color:#997700">5/10</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 2 / 4</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+<!-- PAGINA 3 — 5 Problemi Urgenti + La Visione -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Presentazione Esecutiva — Eurobrico 2.0</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-label">I 5 Problemi più Urgenti</div>
+    <h2 class="section-title-lg">Cosa Non Funziona Oggi</h2>
+
+    <div class="problem-card critico">
+      <div class="problem-header">
+        <span class="problem-title">1. 🔒 Sicurezza Compromessa</span>
+        <span class="sev-critico">CRITICO</span>
+      </div>
+      <p class="problem-desc">Session ID degli utenti visibili negli URL. Tutto il codice sorgente, gli script di tracking e la logica JavaScript sono completamente esposti a chiunque ispezioni il browser.</p>
+      <p class="problem-impact">→ Rischio: violazione dati clienti, non conformità GDPR, potenziale furto di sessioni</p>
+    </div>
+
+    <div class="problem-card critico">
+      <div class="problem-header">
+        <span class="problem-title">2. ⚡ Sito Lento: ~6 Secondi di Caricamento</span>
+        <span class="sev-critico">CRITICO</span>
+      </div>
+      <p class="problem-desc">Il 53% degli utenti mobile abbandona un sito che impiega più di 3 secondi. Con 32.000 visitatori giornalieri, un caricamento di 6 secondi significa che <strong>circa 8.500 potenziali clienti al giorno vengono persi</strong> prima ancora di vedere i vostri prodotti.</p>
+      <p class="problem-impact">→ Impatto stimato: -€45.000/mese in mancate conversioni</p>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-header">
+        <span class="problem-title">3. 📱 Esperienza Mobile Inadeguata</span>
+        <span class="sev-alto">ALTO</span>
+      </div>
+      <p class="problem-desc">Il 72% del traffico e-commerce in Italia arriva da mobile. Il vostro mega-menu (28 categorie) viene completamente nascosto su smartphone senza un'alternativa valida. La navigazione e l'acquisto da telefono sono frustranti.</p>
+      <p class="problem-impact">→ Impatto: perdita della maggioranza del traffico potenziale</p>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-header">
+        <span class="problem-title">4. ♿ Non Conforme European Accessibility Act 2025</span>
+        <span class="sev-alto">ALTO</span>
+      </div>
+      <p class="problem-desc">L'EAA è in vigore da giugno 2025. Il sito attuale non rispetta i requisiti WCAG 2.1 AA: immagini senza testo alternativo, contrasto insufficiente, navigazione da tastiera non funzionante.</p>
+      <p class="problem-impact">→ Rischio legale: sanzioni per ogni violazione documentata</p>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-header">
+        <span class="problem-title">5. 🔍 Google Vi Penalizza</span>
+        <span class="sev-alto">ALTO</span>
+      </div>
+      <p class="problem-desc">I Core Web Vitals (metriche di qualità di Google) sono tutti non superati. Gli URL con session ID confondono i crawler. Il risultato: ranking inferiore rispetto ai competitor per le ricerche dei vostri prodotti.</p>
+      <p class="problem-impact">→ Impatto: perdita di traffico organico gratuito che va ai competitor</p>
+    </div>
+
+    <div class="section-heading">
+      <span class="heading-icon">🚀</span>
+      La Visione — Le 10 Trasformazioni
+    </div>
+
+    <div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Caricamento ~6 secondi</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Caricamento &lt;2 secondi (3x più veloce)</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Sicurezza vulnerabile</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Sicurezza enterprise-grade + CSP</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Design generico, datato</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Design premium 2026, stile Apple Store</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Sito responsive (adattato)</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ PWA installabile come app su smartphone</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Ricerca base con session params</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Ricerca AI con suggerimenti intelligenti</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Cataloghi solo in PDF</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Cataloghi interattivi sfogliabili online</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Checkout multi-step complicato</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ One-page checkout + Apple/Google Pay</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ 4 sistemi analytics separati</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Dashboard unificata real-time</span>
+      </div>
+      <div class="transform-row">
+        <span class="transform-before">✗ Solo italiano</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Italiano + Tedesco (Alto Adige)</span>
+      </div>
+      <div class="transform-row" style="border-bottom:none;">
+        <span class="transform-before">✗ Non conforme EAA 2025</span>
+        <span class="transform-arrow">→</span>
+        <span class="transform-after">✓ Conformità WCAG 2.1 AA garantita</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 3 / 4</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+<!-- PAGINA 4 — Investimento + Prossimi Passi -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-logo"><span class="ph-logo-euro">EURO</span><span class="ph-logo-brico">BRICO</span></div>
+    <span class="ph-title">Presentazione Esecutiva — Eurobrico 2.0</span>
+    <span class="ph-date">Febbraio 2026</span>
+  </div>
+
+  <div class="doc-content">
+
+    <div class="section-label">L'Investimento</div>
+    <h2 class="section-title-lg">Quanto Costa, Quanto Rende</h2>
+
+    <div class="two-col" style="margin-top:16px;">
+      <div>
+        <h3 class="sub-heading">Tre Opzioni di Investimento</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Pacchetto</th>
+                <th class="center">Investimento</th>
+                <th class="center">ROI Anno 1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Essenziale</td>
+                <td class="center bold">€18.000</td>
+                <td class="center green">+180%</td>
+              </tr>
+              <tr style="background:#FFF3EA;">
+                <td class="bold orange">⭐ Professionale</td>
+                <td class="center bold orange">€35.000</td>
+                <td class="center green bold">+343%</td>
+              </tr>
+              <tr>
+                <td>Enterprise</td>
+                <td class="center bold">€55.000</td>
+                <td class="center green">+400%+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="highlight-box highlight-orange" style="margin-top:8px;">
+          <div class="highlight-title">La nostra raccomandazione</div>
+          <p class="highlight-text" style="font-size:12px;">Il pacchetto <strong>Professionale a €35.000</strong> è la soluzione ottimale: include tutto ciò che serve per essere competitivi, con un payback period di circa 4 mesi e un beneficio stimato di <strong>+€121.000 nel primo anno</strong>.</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub-heading">ROI Dettagliato — Professionale</h3>
+        <div class="metrics-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="metric-card" style="background:#F0FFF4;border-color:#28A745;">
+            <div class="metric-value green">343%</div>
+            <div class="metric-label">ROI Anno 1</div>
+          </div>
+          <div class="metric-card" style="background:#F0FFF4;border-color:#28A745;">
+            <div class="metric-value green">~4 mesi</div>
+            <div class="metric-label">Payback</div>
+          </div>
+          <div class="metric-card orange-card">
+            <div class="metric-value orange">+€121k</div>
+            <div class="metric-label">Beneficio Anno 1</div>
+          </div>
+          <div class="metric-card blue-card">
+            <div class="metric-value blue">26 sett.</div>
+            <div class="metric-label">Durata Progetto</div>
+          </div>
+        </div>
+        <div class="highlight-box highlight-gray" style="margin-top:8px;">
+          <div class="highlight-title" style="color:var(--dark)">Costo dell'inazione</div>
+          <p class="highlight-text" style="font-size:12px;">Ogni mese senza intervento = <span style="font-weight:800;color:var(--danger)">€40.000–80.000 di opportunità perduta</span>. Il costo reale di non agire supera l'investimento in pochi mesi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading section-heading-blue">
+      <span class="heading-icon" style="background:var(--blue)">→</span>
+      Prossimi Passi
+    </div>
+
+    <div class="table-wrap">
+      <table class="table-header-blue">
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>Azione</th>
+            <th>Tempistica</th>
+            <th>Da fare</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="center bold">1</td>
+            <td>Feedback su questa presentazione + domande</td>
+            <td>Questa settimana</td>
+            <td>Eurobrico → Oficina Ranuk</td>
+          </tr>
+          <tr>
+            <td class="center bold">2</td>
+            <td>Workshop di Discovery (mezza giornata)</td>
+            <td>Settimana prossima</td>
+            <td>Team Eurobrico + Oficina Ranuk</td>
+          </tr>
+          <tr>
+            <td class="center bold">3</td>
+            <td>Proposta finale + contratto</td>
+            <td>Entro 10 giorni</td>
+            <td>Oficina Ranuk prepara</td>
+          </tr>
+          <tr>
+            <td class="center bold">4</td>
+            <td>Firma e kickoff del progetto</td>
+            <td>A conferma</td>
+            <td>Inizio lavori</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="summary-box" style="margin-top:16px;">
+      <h3>In Sintesi</h3>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="summary-label">Sito attuale</div>
+          <div class="summary-value" style="color:#FF6B6B;">3.8 / 10</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Eurobrico 2.0</div>
+          <div class="summary-value orange-text">9.1 / 10</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Investimento raccomandato</div>
+          <div class="summary-value orange-text">€35.000</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Beneficio previsto anno 1</div>
+          <div class="summary-value orange-text">+€121.000</div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.6);margin-top:16px;text-align:center;">
+        "Un investimento in Eurobrico 2.0 non è una spesa: è la leva che moltiplica il valore di ciò che esiste già."
+      </p>
+    </div>
+
+    <p style="font-size:11px;color:#8E8E93;margin-top:16px;text-align:center;">
+      Proposta valida per 30 giorni dalla data di emissione · Tutti i valori IVA esclusa<br>
+      <strong>© 2026 Oficina Ranuk — Digital Solutions</strong> · Documento riservato ad uso esclusivo di Eurobrico S.p.A.
+    </p>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-confidential"><span class="pf-dot"></span> Riservato — solo uso interno Eurobrico S.p.A.</div>
+    <div>Página 4 / 4</div>
+    <div>Oficina Ranuk © 2026</div>
+  </div>
+</div>
+
+</body>
+</html>
