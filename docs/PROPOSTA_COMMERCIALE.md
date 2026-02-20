@@ -8,8 +8,8 @@
 |---|---|
 | **Preparata per:** | Eurobrico S.p.A. |
 | **Preparata da:** | Oficina Ranuk - Digital Solutions |
-| **Data:** | 16 Febbraio 2026 |
-| **Versione:** | 1.0 |
+| **Data:** | 20 Febbraio 2026 |
+| **Versione:** | 1.1 |
 | **Rif. Documento:** | OR-2026-EB-001 |
 | **Validita dell'offerta:** | 30 giorni dalla data di emissione |
 | **Classificazione:** | Riservato |
@@ -512,6 +512,71 @@ La qualita non e una fase finale, ma un processo continuo integrato in ogni mome
 I prezzi indicati di seguito sono il risultato di una stima accurata basata sulla complessita del progetto, sulle risorse necessarie e sulla nostra esperienza in progetti analoghi. Ogni pacchetto e stato progettato per offrire il massimo valore in relazione all'investimento richiesto.
 
 Tutti i prezzi sono espressi in Euro (EUR), IVA esclusa.
+
+---
+
+### 💼 Preventivo — Proposta Riservata per Eurobrico
+
+> *Questa proposta economica e stata elaborata su misura per Eurobrico, nell'ambito di un rapporto di fiducia e collaborazione a lungo termine.*
+
+---
+
+#### Pacchetto Essenziale — €7.000
+
+**Il punto di partenza ideale** per chi vuole una presenza online moderna e professionale.
+
+**Incluso:**
+- Redesign completo con design system moderno (Apple-inspired)
+- E-commerce funzionale con catalogo prodotti completo
+- Design responsive mobile-first
+- Pagamenti: Carta, PayPal, Bonifico
+- SEO on-page: meta tag, sitemap, URL ottimizzati
+- Store locator + Blog/Magazine
+- Mini-cart, wishlist, filtri base
+- 2 mesi di supporto post-lancio
+
+**Non incluso:** PWA, ricerca AI, stock real-time, portale B2B, programma fedelta.
+
+---
+
+#### Pacchetto Professionale ★ — €10.000
+
+**Il miglior rapporto valore/investimento.** La soluzione per competere con i grandi player del settore nel 2026.
+
+**Tutto di Essenziale, piu:**
+- **PWA** — il sito si installa come app sullo smartphone
+- **Ricerca AI** con autocomplete, suggerimenti e correzione errori
+- **Stock real-time** per tutti i 24 negozi + Click & Collect
+- **Tutti i metodi di pagamento**: Apple Pay, Google Pay, Satispay, Scalapay
+- **Bilingue IT + DE** per il territorio dell'Alto Adige
+- **Analytics dashboard** unificata per il management
+- SEO avanzata: Schema.org, hreflang, redirect map
+- 3 mesi di supporto dedicato post-lancio
+
+---
+
+#### Pacchetto Enterprise — €15.000
+
+**La trasformazione digitale completa**, senza compromessi. Tutto cio che serve per i prossimi 10 anni.
+
+**Tutto di Professionale, piu:**
+- **Integrazione ERP/POS** bidirezionale con i sistemi esistenti
+- **Portale B2B** — area riservata per artigiani e professionisti con listini dedicati
+- **Programma fedelta digitale** (livelli, punti, coupon, gamification)
+- **Raccomandazioni AI** personalizzate per ogni utente
+- **Cataloghi digitali interattivi** (sostituisce i PDF statici)
+- **Infrastruttura cloud dedicata** con auto-scaling e disaster recovery
+- **SLA garantito 99.9%** di uptime
+- 6 mesi di supporto dedicato + 2 sessioni di training per il team
+- Proprieta completa del codice sorgente
+
+---
+
+**Costi ricorrenti annuali** (Pacchetto Professionale): €2.000/anno (hosting + manutenzione + supporto)
+
+**Modalita di pagamento**: 40% alla firma, 30% al design approvato, 30% al go-live.
+
+---
 
 ---
 

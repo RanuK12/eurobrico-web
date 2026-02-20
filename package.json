@@ -1,0 +1,26 @@
+{
+  "name": "eurobrico_web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RanuK12/eurobrico-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RanuK12/eurobrico-web/issues"
+  },
+  "homepage": "https://github.com/RanuK12/eurobrico-web#readme",
+  "description": "",
+  "devDependencies": {
+    "puppeteer": "^24.37.5"
+  }
+}
