@@ -22,3 +22,7 @@ Análisis y prototipo web de Eurobrico.com/it — plataforma de e-commerce de br
 ## Estado
 - ✅ Análisis completo
 - 🚧 Prototipo en desarrollo
+
+## Licencia
+
+MIT — © 2026 Ranuk IT Solutions | ranuk.dev
